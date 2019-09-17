@@ -10,7 +10,12 @@
 
 @interface MGTransactionListViewController ()
 
+@property (nonatomic, strong) UITableView *tableView;
+
+    
 @end
+
+
 
 @implementation MGTransactionListViewController
 
@@ -18,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Transaction";
+
 
 }
 

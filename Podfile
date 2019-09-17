@@ -10,8 +10,10 @@ target 'TWBudgetAndExpense' do
   pod 'Realm'
   pod 'Masonry'
   pod 'BlocksKit'
+  pod 'Objection', '~> 0.9'
   pod 'DZNEmptyDataSet'
   pod 'ReactiveCocoa', '2.5'
+  pod 'ReactiveViewModel', '~>0.1'
   pod 'RETableViewManager'
   pod 'FDFullscreenPopGesture', '~> 1.1'
   pod 'UINavigationItem+Loading', '~> 1.1'
@@ -22,6 +24,8 @@ target 'TWBudgetAndExpense' do
     inherit! :search_paths
     # Pods for testing
     pod 'Realm/Headers'
+    pod 'Kiwi'
+
   end
 
 end

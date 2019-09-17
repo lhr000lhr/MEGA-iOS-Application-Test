@@ -16,7 +16,9 @@ PODS:
     - BlocksKit/DynamicDelegate
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
+  - Kiwi (3.0.0)
   - Masonry (1.1.0)
+  - Objection (0.16.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -24,6 +26,8 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
   - Realm (3.17.3):
     - Realm/Headers (= 3.17.3)
   - Realm/Headers (3.17.3)
@@ -42,8 +46,11 @@ DEPENDENCIES:
   - BlocksKit
   - DZNEmptyDataSet
   - FDFullscreenPopGesture (~> 1.1)
+  - Kiwi
   - Masonry
+  - Objection (~> 0.9)
   - ReactiveCocoa (= 2.5)
+  - ReactiveViewModel (~> 0.1)
   - Realm
   - Realm/Headers
   - RETableViewManager
@@ -55,8 +62,11 @@ SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Objection: 7445392399fb3082acec36a231dca7c14637c1ac
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   REFormattedNumberField: 70fc5fb1218ebd5ee9983820defd12806d5c6ec6
   RETableViewManager: 0f24d796c42c0890d38c79cc9aeb3871e186726e
@@ -65,6 +75,6 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 3fbfcc27a97ccc189de7feb9ddcb30e4716edae1
+PODFILE CHECKSUM: 50b0ceccbe3a51b47ab21ef5706dc8717da3b70d
 
 COCOAPODS: 1.4.0
