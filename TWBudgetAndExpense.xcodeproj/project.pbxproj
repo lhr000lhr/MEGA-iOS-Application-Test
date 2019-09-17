@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		141B1ADA5744132185771CC0 /* libPods-TWBudgetAndExpenseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16236056C437822A3A4DB8 /* libPods-TWBudgetAndExpenseTests.a */; };
+		4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335BA2330B13D002B3713 /* MGChartsViewController.m */; };
+		4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */; };
+		4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C72330B266002B3713 /* MGCategoryViewController.m */; };
 		4BF86219233098EA00C0122F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF86218233098EA00C0122F /* AppDelegate.m */; };
 		4BF8621C233098EA00C0122F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8621B233098EA00C0122F /* FirstViewController.m */; };
 		4BF8621F233098EA00C0122F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8621E233098EA00C0122F /* SecondViewController.m */; };
@@ -32,6 +35,12 @@
 /* Begin PBXFileReference section */
 		21946A45E132717D92514B67 /* Pods-TWBudgetAndExpense.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWBudgetAndExpense.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWBudgetAndExpense/Pods-TWBudgetAndExpense.debug.xcconfig"; sourceTree = "<group>"; };
 		3571E1AC59CBB9B4C6B438B7 /* libPods-TWBudgetAndExpense.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWBudgetAndExpense.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB335B92330B13D002B3713 /* MGChartsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGChartsViewController.h; sourceTree = "<group>"; };
+		4BB335BA2330B13D002B3713 /* MGChartsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGChartsViewController.m; sourceTree = "<group>"; };
+		4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTransactionListViewController.h; sourceTree = "<group>"; };
+		4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTransactionListViewController.m; sourceTree = "<group>"; };
+		4BB335C62330B266002B3713 /* MGCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryViewController.h; sourceTree = "<group>"; };
+		4BB335C72330B266002B3713 /* MGCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewController.m; sourceTree = "<group>"; };
 		4BF86214233098EA00C0122F /* TWBudgetAndExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBudgetAndExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF86217233098EA00C0122F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BF86218233098EA00C0122F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,14 +91,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4BB335B62330AF45002B3713 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4BB335B82330B135002B3713 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4BB335BC2330B191002B3713 /* Charts */,
+				4BB335C12330B23B002B3713 /* Transaction */,
+				4BB335C52330B256002B3713 /* Category */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4BB335BC2330B191002B3713 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				4BB335B92330B13D002B3713 /* MGChartsViewController.h */,
+				4BB335BA2330B13D002B3713 /* MGChartsViewController.m */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		4BB335C12330B23B002B3713 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */,
+				4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		4BB335C52330B256002B3713 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4BB335C62330B266002B3713 /* MGCategoryViewController.h */,
+				4BB335C72330B266002B3713 /* MGCategoryViewController.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		4BF8620B233098EA00C0122F = {
 			isa = PBXGroup;
 			children = (
 				4BF86216233098EA00C0122F /* TWBudgetAndExpense */,
-				4BF86232233098EB00C0122F /* TWBudgetAndExpenseTests */,
-				4BF86215233098EA00C0122F /* Products */,
-				A5E6E261AB1FE5A4C74D2BD5 /* Pods */,
 				44A2AFEAC095D84B6A7815B6 /* Frameworks */,
+				A5E6E261AB1FE5A4C74D2BD5 /* Pods */,
+				4BF86215233098EA00C0122F /* Products */,
+				4BF86232233098EB00C0122F /* TWBudgetAndExpenseTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,16 +158,18 @@
 		4BF86216233098EA00C0122F /* TWBudgetAndExpense */ = {
 			isa = PBXGroup;
 			children = (
+				4BB335B62330AF45002B3713 /* API */,
+				4BB335B82330B135002B3713 /* Modules */,
 				4BF86217233098EA00C0122F /* AppDelegate.h */,
 				4BF86218233098EA00C0122F /* AppDelegate.m */,
+				4BF86223233098EA00C0122F /* Assets.xcassets */,
 				4BF8621A233098EA00C0122F /* FirstViewController.h */,
 				4BF8621B233098EA00C0122F /* FirstViewController.m */,
+				4BF86228233098EA00C0122F /* Info.plist */,
+				4BF86225233098EA00C0122F /* LaunchScreen.storyboard */,
+				4BF86220233098EA00C0122F /* Main.storyboard */,
 				4BF8621D233098EA00C0122F /* SecondViewController.h */,
 				4BF8621E233098EA00C0122F /* SecondViewController.m */,
-				4BF86220233098EA00C0122F /* Main.storyboard */,
-				4BF86223233098EA00C0122F /* Assets.xcassets */,
-				4BF86225233098EA00C0122F /* LaunchScreen.storyboard */,
-				4BF86228233098EA00C0122F /* Info.plist */,
 				4BF86229233098EA00C0122F /* main.m */,
 			);
 			path = TWBudgetAndExpense;
@@ -123,8 +178,8 @@
 		4BF86232233098EB00C0122F /* TWBudgetAndExpenseTests */ = {
 			isa = PBXGroup;
 			children = (
-				4BF86233233098EB00C0122F /* TWBudgetAndExpenseTests.m */,
 				4BF86235233098EB00C0122F /* Info.plist */,
+				4BF86233233098EB00C0122F /* TWBudgetAndExpenseTests.m */,
 			);
 			path = TWBudgetAndExpenseTests;
 			sourceTree = "<group>";
@@ -190,6 +245,7 @@
 		4BF8620C233098EA00C0122F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MG;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = MEGA;
 				TargetAttributes = {
@@ -373,9 +429,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF8621F233098EA00C0122F /* SecondViewController.m in Sources */,
+				4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */,
 				4BF86219233098EA00C0122F /* AppDelegate.m in Sources */,
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
+				4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */,
 				4BF8621C233098EA00C0122F /* FirstViewController.m in Sources */,
+				4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +463,7 @@
 				4BF86221233098EA00C0122F /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		4BF86225233098EA00C0122F /* LaunchScreen.storyboard */ = {
@@ -412,6 +472,7 @@
 				4BF86226233098EA00C0122F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
