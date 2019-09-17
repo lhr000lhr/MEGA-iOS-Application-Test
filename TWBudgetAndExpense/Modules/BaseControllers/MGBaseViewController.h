@@ -1,5 +1,5 @@
 //
-//  MGRecordTableViewController.h
+//  MGBaseViewController.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGBaseViewControllerProtocal.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGRecordTableViewController : UITableViewController <MGRecordTableViewControllerProtocol>
+@interface MGBaseViewController : UIViewController <MGBaseViewControllerProtocal>
+
 
 @end
 

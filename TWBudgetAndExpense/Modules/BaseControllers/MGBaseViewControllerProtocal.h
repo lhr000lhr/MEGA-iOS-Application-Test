@@ -1,5 +1,5 @@
 //
-//  MGProtocol.h
+//  MGBaseViewControllerProtocal.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MGBaseViewControllerProtocal <NSObject>
 
-@protocol MGRecordViewControllerProtocol <NSObject>
+@optional
+- (void)configureNavigationItem;
+- (void)configureViews;
+
 @end
-
 
 NS_ASSUME_NONNULL_END

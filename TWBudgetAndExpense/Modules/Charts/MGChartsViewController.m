@@ -18,8 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Chart";
-    [self configureNavigationItem];
-    [self configureViews];
 
 
 }
@@ -34,7 +32,10 @@
         UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender) {
             @strongify(self);
             
-          
+            UIViewController <MGRecordViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGRecordViewControllerProtocol)];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+
+            [self presentViewController:nav animated:YES completion:nil];
         }];
         item;
     });
@@ -49,4 +50,5 @@
 
 
 }
+
 @end

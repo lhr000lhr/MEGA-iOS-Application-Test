@@ -21,6 +21,7 @@
 //开源库
 #import "YYKit.h"
 #import "Masonry.h"
+#import <Objection.h>
 
 #import "BlocksKit+UIKit.h"
 
@@ -30,6 +31,8 @@
 #import <RETableViewManager/RETableViewManager.h>
 
 
+#import "MGBaseViewController.h"
+#import "MGBaseTableViewController.h"
 
 #endif
 

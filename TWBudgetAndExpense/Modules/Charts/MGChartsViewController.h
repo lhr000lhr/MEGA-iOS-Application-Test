@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGChartsViewController : UIViewController
+@interface MGChartsViewController : MGBaseViewController
 
 @end
 

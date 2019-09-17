@@ -7,8 +7,7 @@
 //
 
 #import "MGReacordModule.h"
-#import "MGRecordTableViewController.h"
-#import <Objection.h>
+#import "MGRecordViewController.h"
 
 @implementation MGReacordModule
 
@@ -22,7 +21,7 @@
 
 - (void)configure
 {
-    [self bindClass:[MGRecordTableViewController class] toProtocol:@protocol(MGRecordTableViewControllerProtocol)];
+    [self bindClass:[MGRecordViewController class] toProtocol:@protocol(MGRecordViewControllerProtocol)];
 }
 
 @end

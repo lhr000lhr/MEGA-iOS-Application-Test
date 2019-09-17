@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		141B1ADA5744132185771CC0 /* libPods-TWBudgetAndExpenseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16236056C437822A3A4DB8 /* libPods-TWBudgetAndExpenseTests.a */; };
-		4B80F9D52330DC6F00E5172F /* MGRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D42330DC6F00E5172F /* MGRecordTableViewController.m */; };
+		4B80F9D52330DC6F00E5172F /* MGRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D42330DC6F00E5172F /* MGRecordViewController.m */; };
 		4B80F9DA2330DFE400E5172F /* MGReacordModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D92330DFE400E5172F /* MGReacordModule.m */; };
+		4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9DD2330E55600E5172F /* MGBaseViewController.m */; };
+		4B80F9E12330E78F00E5172F /* MGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E02330E78F00E5172F /* MGBaseTableViewController.m */; };
 		4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335BA2330B13D002B3713 /* MGChartsViewController.m */; };
 		4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */; };
 		4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C72330B266002B3713 /* MGCategoryViewController.m */; };
 		4BF86219233098EA00C0122F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF86218233098EA00C0122F /* AppDelegate.m */; };
-		4BF8621C233098EA00C0122F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8621B233098EA00C0122F /* FirstViewController.m */; };
-		4BF8621F233098EA00C0122F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8621E233098EA00C0122F /* SecondViewController.m */; };
 		4BF86222233098EA00C0122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86220233098EA00C0122F /* Main.storyboard */; };
 		4BF86224233098EA00C0122F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86223233098EA00C0122F /* Assets.xcassets */; };
 		4BF86227233098EA00C0122F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86225233098EA00C0122F /* LaunchScreen.storyboard */; };
@@ -37,11 +37,16 @@
 /* Begin PBXFileReference section */
 		21946A45E132717D92514B67 /* Pods-TWBudgetAndExpense.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWBudgetAndExpense.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWBudgetAndExpense/Pods-TWBudgetAndExpense.debug.xcconfig"; sourceTree = "<group>"; };
 		3571E1AC59CBB9B4C6B438B7 /* libPods-TWBudgetAndExpense.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWBudgetAndExpense.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B80F9D32330DC6F00E5172F /* MGRecordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGRecordTableViewController.h; sourceTree = "<group>"; };
-		4B80F9D42330DC6F00E5172F /* MGRecordTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGRecordTableViewController.m; sourceTree = "<group>"; };
+		4B80F9D32330DC6F00E5172F /* MGRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGRecordViewController.h; sourceTree = "<group>"; };
+		4B80F9D42330DC6F00E5172F /* MGRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGRecordViewController.m; sourceTree = "<group>"; };
 		4B80F9D72330DF8200E5172F /* MGProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGProtocols.h; sourceTree = "<group>"; };
 		4B80F9D82330DFE400E5172F /* MGReacordModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGReacordModule.h; sourceTree = "<group>"; };
 		4B80F9D92330DFE400E5172F /* MGReacordModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGReacordModule.m; sourceTree = "<group>"; };
+		4B80F9DC2330E55600E5172F /* MGBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGBaseViewController.h; sourceTree = "<group>"; };
+		4B80F9DD2330E55600E5172F /* MGBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGBaseViewController.m; sourceTree = "<group>"; };
+		4B80F9DF2330E78F00E5172F /* MGBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGBaseTableViewController.h; sourceTree = "<group>"; };
+		4B80F9E02330E78F00E5172F /* MGBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGBaseTableViewController.m; sourceTree = "<group>"; };
+		4B80F9E22330E7C700E5172F /* MGBaseViewControllerProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGBaseViewControllerProtocal.h; sourceTree = "<group>"; };
 		4BB335B92330B13D002B3713 /* MGChartsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGChartsViewController.h; sourceTree = "<group>"; };
 		4BB335BA2330B13D002B3713 /* MGChartsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGChartsViewController.m; sourceTree = "<group>"; };
 		4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTransactionListViewController.h; sourceTree = "<group>"; };
@@ -52,10 +57,6 @@
 		4BF86214233098EA00C0122F /* TWBudgetAndExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBudgetAndExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF86217233098EA00C0122F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BF86218233098EA00C0122F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4BF8621A233098EA00C0122F /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		4BF8621B233098EA00C0122F /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		4BF8621D233098EA00C0122F /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4BF8621E233098EA00C0122F /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		4BF86221233098EA00C0122F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BF86223233098EA00C0122F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BF86226233098EA00C0122F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,8 +103,8 @@
 		4B80F9D22330DC4000E5172F /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				4B80F9D32330DC6F00E5172F /* MGRecordTableViewController.h */,
-				4B80F9D42330DC6F00E5172F /* MGRecordTableViewController.m */,
+				4B80F9D32330DC6F00E5172F /* MGRecordViewController.h */,
+				4B80F9D42330DC6F00E5172F /* MGRecordViewController.m */,
 				4B80F9D82330DFE400E5172F /* MGReacordModule.h */,
 				4B80F9D92330DFE400E5172F /* MGReacordModule.m */,
 			);
@@ -118,6 +119,18 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4B80F9DB2330E40C00E5172F /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B80F9DC2330E55600E5172F /* MGBaseViewController.h */,
+				4B80F9DD2330E55600E5172F /* MGBaseViewController.m */,
+				4B80F9E22330E7C700E5172F /* MGBaseViewControllerProtocal.h */,
+				4B80F9DF2330E78F00E5172F /* MGBaseTableViewController.h */,
+				4B80F9E02330E78F00E5172F /* MGBaseTableViewController.m */,
+			);
+			path = BaseControllers;
+			sourceTree = "<group>";
+		};
 		4BB335B62330AF45002B3713 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 		4BB335B82330B135002B3713 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4B80F9DB2330E40C00E5172F /* BaseControllers */,
 				4BB335C52330B256002B3713 /* Category */,
 				4BB335BC2330B191002B3713 /* Charts */,
 				4B80F9D22330DC4000E5172F /* Record */,
@@ -192,13 +206,9 @@
 				4BF86218233098EA00C0122F /* AppDelegate.m */,
 				4B80F9D62330DF6900E5172F /* Protocols */,
 				4BF86223233098EA00C0122F /* Assets.xcassets */,
-				4BF8621A233098EA00C0122F /* FirstViewController.h */,
-				4BF8621B233098EA00C0122F /* FirstViewController.m */,
 				4BF86228233098EA00C0122F /* Info.plist */,
 				4BF86225233098EA00C0122F /* LaunchScreen.storyboard */,
 				4BF86220233098EA00C0122F /* Main.storyboard */,
-				4BF8621D233098EA00C0122F /* SecondViewController.h */,
-				4BF8621E233098EA00C0122F /* SecondViewController.m */,
 				4BB335C92330CBC8002B3713 /* TWBudgetAndExpense-Prefix.pch */,
 				4BF86229233098EA00C0122F /* main.m */,
 			);
@@ -458,15 +468,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF8621F233098EA00C0122F /* SecondViewController.m in Sources */,
+				4B80F9E12330E78F00E5172F /* MGBaseTableViewController.m in Sources */,
 				4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */,
-				4B80F9D52330DC6F00E5172F /* MGRecordTableViewController.m in Sources */,
+				4B80F9D52330DC6F00E5172F /* MGRecordViewController.m in Sources */,
 				4BF86219233098EA00C0122F /* AppDelegate.m in Sources */,
 				4B80F9DA2330DFE400E5172F /* MGReacordModule.m in Sources */,
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
 				4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */,
-				4BF8621C233098EA00C0122F /* FirstViewController.m in Sources */,
 				4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */,
+				4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
