@@ -12,6 +12,8 @@
 		4B80F9DA2330DFE400E5172F /* MGReacordModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D92330DFE400E5172F /* MGReacordModule.m */; };
 		4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9DD2330E55600E5172F /* MGBaseViewController.m */; };
 		4B80F9E12330E78F00E5172F /* MGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E02330E78F00E5172F /* MGBaseTableViewController.m */; };
+		4B80F9E52331121500E5172F /* MGCategoryCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E42331121500E5172F /* MGCategoryCreateViewController.m */; };
+		4B80F9E82331129800E5172F /* MGCategoryModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E72331129800E5172F /* MGCategoryModule.m */; };
 		4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335BA2330B13D002B3713 /* MGChartsViewController.m */; };
 		4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */; };
 		4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C72330B266002B3713 /* MGCategoryViewController.m */; };
@@ -47,6 +49,10 @@
 		4B80F9DF2330E78F00E5172F /* MGBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGBaseTableViewController.h; sourceTree = "<group>"; };
 		4B80F9E02330E78F00E5172F /* MGBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGBaseTableViewController.m; sourceTree = "<group>"; };
 		4B80F9E22330E7C700E5172F /* MGBaseViewControllerProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGBaseViewControllerProtocal.h; sourceTree = "<group>"; };
+		4B80F9E32331121500E5172F /* MGCategoryCreateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryCreateViewController.h; sourceTree = "<group>"; };
+		4B80F9E42331121500E5172F /* MGCategoryCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryCreateViewController.m; sourceTree = "<group>"; };
+		4B80F9E62331129800E5172F /* MGCategoryModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryModule.h; sourceTree = "<group>"; };
+		4B80F9E72331129800E5172F /* MGCategoryModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryModule.m; sourceTree = "<group>"; };
 		4BB335B92330B13D002B3713 /* MGChartsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGChartsViewController.h; sourceTree = "<group>"; };
 		4BB335BA2330B13D002B3713 /* MGChartsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGChartsViewController.m; sourceTree = "<group>"; };
 		4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTransactionListViewController.h; sourceTree = "<group>"; };
@@ -173,6 +179,10 @@
 			children = (
 				4BB335C62330B266002B3713 /* MGCategoryViewController.h */,
 				4BB335C72330B266002B3713 /* MGCategoryViewController.m */,
+				4B80F9E32331121500E5172F /* MGCategoryCreateViewController.h */,
+				4B80F9E42331121500E5172F /* MGCategoryCreateViewController.m */,
+				4B80F9E62331129800E5172F /* MGCategoryModule.h */,
+				4B80F9E72331129800E5172F /* MGCategoryModule.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -472,8 +482,10 @@
 				4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */,
 				4B80F9D52330DC6F00E5172F /* MGRecordViewController.m in Sources */,
 				4BF86219233098EA00C0122F /* AppDelegate.m in Sources */,
+				4B80F9E52331121500E5172F /* MGCategoryCreateViewController.m in Sources */,
 				4B80F9DA2330DFE400E5172F /* MGReacordModule.m in Sources */,
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
+				4B80F9E82331129800E5172F /* MGCategoryModule.m in Sources */,
 				4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */,
 				4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */,
 				4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */,

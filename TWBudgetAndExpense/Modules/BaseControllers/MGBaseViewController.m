@@ -35,4 +35,8 @@
     
 }
 
+- (void)configureNavigationItem {
+    
+}
+
 @end

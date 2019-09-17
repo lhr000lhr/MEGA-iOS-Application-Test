@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MGBaseViewControllerProtocal <NSObject>
-
 @optional
 - (void)configureNavigationItem;
 - (void)configureViews;

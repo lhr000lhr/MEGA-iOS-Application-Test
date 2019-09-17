@@ -1,15 +1,16 @@
 //
-//  MGReacordModule.m
+//  MGCategoryModule.m
 //  TWBudgetAndExpense
 //
-//  Created by haoran lee on 2019/9/17.
+//  Created by haoran lee on 2019/9/18.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "MGReacordModule.h"
-#import "MGRecordViewController.h"
+#import "MGCategoryModule.h"
+#import "MGCategoryCreateViewController.h"
 
-@implementation MGReacordModule
+
+@implementation MGCategoryModule
 
 + (void)load {
     JSObjectionInjector *injector = [JSObjection defaultInjector];
@@ -19,7 +20,8 @@
 }
 
 - (void)configure {
-    [self bindClass:[MGRecordViewController class] toProtocol:@protocol(MGRecordViewControllerProtocol)];
+    [self bindClass:[MGCategoryCreateViewController class] toProtocol:@protocol(MGCategoryCreateViewControllerProtocol)];
 }
 
 @end
+

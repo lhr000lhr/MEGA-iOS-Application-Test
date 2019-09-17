@@ -1,40 +1,39 @@
 //
-//  MGRecordViewController.m
+//  MGCategoryCreateViewController.m
 //  TWBudgetAndExpense
 //
-//  Created by haoran lee on 2019/9/17.
+//  Created by haoran lee on 2019/9/18.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "MGRecordViewController.h"
+#import "MGCategoryCreateViewController.h"
 
-@interface MGRecordViewController () <RETableViewManagerDelegate>
+@interface MGCategoryCreateViewController () <RETableViewManagerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 
 @property (strong, nonatomic) RETableViewManager *manager;
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;
 
-@property (strong, nonatomic) REDateTimeItem *dateItem;
-@property (strong, nonatomic) REPickerItem *categoryItem;
+@property (strong, nonatomic) RETextItem *nameItem;
+@property (strong, nonatomic) REPickerItem *colorItem;
 @property (strong, nonatomic) RETextItem *amountItem;
 
 @end
 
-@implementation MGRecordViewController
+@implementation MGCategoryCreateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.tableFooterView = [[UIView alloc] init];
     
-    self.title = @"Record";
+    self.title = @"New Category";
 }
 
 #pragma mark - Configure Views
 
 - (void)configureNavigationItem {
-
+    
     @weakify(self);
     
     self.navigationItem.leftBarButtonItem = ({
@@ -52,8 +51,8 @@
         }];
         item;
     });
-    
 }
+
 
 - (void)configureViews {
     [super configureViews];
@@ -68,25 +67,25 @@
         tableView;
     });
     self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
-
+    
     self.basicControlsSection = ({
         RETableViewSection *section = [RETableViewSection section];
         
         [self.manager addSection:section];
         section;
     });
-    
-    
-    self.dateItem = ({
-        REDateTimeItem *item = [REDateTimeItem itemWithTitle:@"Date" value:[NSDate date] placeholder:nil format:@"yyyy/MM/dd" datePickerMode:UIDatePickerModeDate];
+
+    self.nameItem = ({
+        RETextItem *item = [RETextItem itemWithTitle:@"Name"];
+        item.keyboardType = UIKeyboardTypeNumberPad;
+        item.placeholder = @"input here";
         [self.basicControlsSection addItem:item];
         item;
     });
     
-    self.categoryItem = ({
-        REPickerItem *item = [REPickerItem itemWithTitle:@"Category" value:@[] placeholder:nil options:nil];
+    self.colorItem = ({
+        REPickerItem *item = [REPickerItem itemWithTitle:@"Colour" value:@[] placeholder:nil options:nil];
         [self.basicControlsSection addItem:item];
-      
         item;
     });
     
@@ -103,6 +102,5 @@
         item;
     });
 }
-
 
 @end

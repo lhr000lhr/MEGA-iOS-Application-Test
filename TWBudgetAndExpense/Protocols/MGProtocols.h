@@ -15,5 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MGRecordViewControllerProtocol <NSObject>
 @end
 
+@protocol MGCategoryCreateViewControllerProtocol <NSObject>
+@end
 
 NS_ASSUME_NONNULL_END
