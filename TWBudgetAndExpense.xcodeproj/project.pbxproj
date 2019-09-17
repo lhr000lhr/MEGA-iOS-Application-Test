@@ -291,11 +291,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TWBudgetAndExpense/Pods-TWBudgetAndExpense-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/RETableViewManager/RETableViewManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RETableViewManager.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

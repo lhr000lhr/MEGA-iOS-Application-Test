@@ -27,6 +27,11 @@ PODS:
   - Realm (3.17.3):
     - Realm/Headers (= 3.17.3)
   - Realm/Headers (3.17.3)
+  - REFormattedNumberField (1.1.6)
+  - RETableViewManager (1.7):
+    - REFormattedNumberField (~> 1.1.5)
+    - REValidation (~> 0.1.4)
+  - REValidation (0.1.4)
   - UINavigationItem+Loading (1.1)
   - UITableView+FDTemplateLayoutCell (1.6)
   - YYKit (1.0.9):
@@ -41,6 +46,7 @@ DEPENDENCIES:
   - ReactiveCocoa (= 2.5)
   - Realm
   - Realm/Headers
+  - RETableViewManager
   - UINavigationItem+Loading (~> 1.1)
   - UITableView+FDTemplateLayoutCell (~> 1.4.beta)
   - YYKit
@@ -52,10 +58,13 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  REFormattedNumberField: 70fc5fb1218ebd5ee9983820defd12806d5c6ec6
+  RETableViewManager: 0f24d796c42c0890d38c79cc9aeb3871e186726e
+  REValidation: 38c4de1be58455f8b00aab208ac80db316a66b7f
   UINavigationItem+Loading: e61d7963495d8a19b6d3825d867ed60db9b218b6
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e8c50d3c7efc50fa6919830d320f25b6af97ae2d
+PODFILE CHECKSUM: 3fbfcc27a97ccc189de7feb9ddcb30e4716edae1
 
 COCOAPODS: 1.4.0

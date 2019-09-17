@@ -12,6 +12,7 @@ target 'TWBudgetAndExpense' do
   pod 'BlocksKit'
   pod 'DZNEmptyDataSet'
   pod 'ReactiveCocoa', '2.5'
+  pod 'RETableViewManager'
   pod 'FDFullscreenPopGesture', '~> 1.1'
   pod 'UINavigationItem+Loading', '~> 1.1'
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.4.beta'
