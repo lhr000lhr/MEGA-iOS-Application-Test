@@ -1,0 +1,61 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - DZNEmptyDataSet (1.8.1)
+  - FDFullscreenPopGesture (1.1)
+  - Masonry (1.1.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - UINavigationItem+Loading (1.1)
+  - UITableView+FDTemplateLayoutCell (1.6)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - BlocksKit
+  - DZNEmptyDataSet
+  - FDFullscreenPopGesture (~> 1.1)
+  - Masonry
+  - ReactiveCocoa (= 2.5)
+  - Realm
+  - Realm/Headers
+  - UINavigationItem+Loading (~> 1.1)
+  - UITableView+FDTemplateLayoutCell (~> 1.4.beta)
+  - YYKit
+
+SPEC CHECKSUMS:
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  UINavigationItem+Loading: e61d7963495d8a19b6d3825d867ed60db9b218b6
+  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: e8c50d3c7efc50fa6919830d320f25b6af97ae2d
+
+COCOAPODS: 1.4.0
