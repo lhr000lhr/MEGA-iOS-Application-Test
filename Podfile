@@ -28,4 +28,9 @@ target 'TWBudgetAndExpense' do
 
   end
 
+  pre_install do
+      system("sed -i '' '/UITextField/d' Pods/BlocksKit/BlocksKit/BlocksKit+UIKit.h")
+      system('rm Pods/BlocksKit/BlocksKit/UIKit/UITextField+BlocksKit.h')
+      system('rm Pods/BlocksKit/BlocksKit/UIKit/UITextField+BlocksKit.m')
+  end
 end
