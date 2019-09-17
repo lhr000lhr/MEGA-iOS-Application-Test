@@ -15,6 +15,10 @@
 @property (strong, nonatomic) RETableViewManager *manager;
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;
 
+@property (strong, nonatomic) REDateTimeItem *dateItem;
+@property (strong, nonatomic) REPickerItem *categoryItem;
+@property (strong, nonatomic) RETextItem *amountItem;
+
 @end
 
 @implementation MGRecordViewController
@@ -23,7 +27,6 @@
     [super viewDidLoad];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
     
     self.title = @"Record";
 }
@@ -31,7 +34,7 @@
 #pragma mark - Configure Views
 
 - (void)configureNavigationItem {
-    
+
     @weakify(self);
     
     self.navigationItem.leftBarButtonItem = ({
@@ -56,12 +59,40 @@
         }];
         tableView;
     });
+    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
 
     self.basicControlsSection = ({
         RETableViewSection *section = [RETableViewSection section];
         
         [self.manager addSection:section];
         section;
+    });
+    
+    
+    self.dateItem = ({
+        REDateTimeItem *item = [REDateTimeItem itemWithTitle:@"Date" value:[NSDate date] placeholder:nil format:@"yyyy/MM/dd" datePickerMode:UIDatePickerModeDate];
+        [self.basicControlsSection addItem:item];
+        item;
+    });
+    
+    self.categoryItem = ({
+        REPickerItem *item = [REPickerItem itemWithTitle:@"Category" value:@[] placeholder:nil options:nil];
+        [self.basicControlsSection addItem:item];
+      
+        item;
+    });
+    
+    self.amountItem = ({
+        RETextItem *item = [RETextItem itemWithTitle:@"Amount"];
+        item.keyboardType = UIKeyboardTypeNumberPad;
+        item.placeholder = @"input here";
+        item.accessoryView = ({
+            UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
+            segmentedControl.selectedSegmentIndex = 0;
+            segmentedControl;
+        });
+        [self.basicControlsSection addItem:item];
+        item;
     });
 }
 
