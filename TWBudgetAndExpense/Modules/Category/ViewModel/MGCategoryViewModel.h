@@ -1,16 +1,19 @@
 //
-//  MGCategory.h
+//  MGCategoryViewModel.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/18.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "RLMObject.h"
+#import "RVMViewModel.h"
+#import "MGCategory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGCategory : RLMObject
+@interface MGCategoryViewModel : RVMViewModel
+
+
 
 @end
 
