@@ -7,8 +7,9 @@
 //
 
 #import "MGCategoryCreateViewController.h"
+#import <MSColorPicker/MSColorPicker.h>
 
-@interface MGCategoryCreateViewController () <RETableViewManagerDelegate>
+@interface MGCategoryCreateViewController () <RETableViewManagerDelegate, MSColorSelectionViewControllerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -16,7 +17,7 @@
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;
 
 @property (strong, nonatomic) RETextItem *nameItem;
-@property (strong, nonatomic) REPickerItem *colorItem;
+@property (strong, nonatomic) RETableViewItem *colorItem;
 @property (strong, nonatomic) RETextItem *amountItem;
 
 @end
@@ -57,6 +58,8 @@
 - (void)configureViews {
     [super configureViews];
     
+    @weakify(self);
+
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         
@@ -83,7 +86,35 @@
     });
     
     self.colorItem = ({
-        REPickerItem *item = [REPickerItem itemWithTitle:@"Colour" value:@[] placeholder:nil options:nil];
+        RETableViewItem *item = [RETableViewItem itemWithTitle:@"Colour"];
+        UIColor *categoryColor = [UIColor redColor];
+        [item setImage:[UIImage imageWithColor:categoryColor size:CGSizeMake(30, 30)]];
+        [item setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        
+        [item setSelectionHandler:^(RETableViewItem *item) {
+            [item deselectRowAnimated:YES];
+            @strongify(self);
+            MSColorSelectionViewController *colorSelectionController = [[MSColorSelectionViewController alloc] init];
+            UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:colorSelectionController];
+           
+            colorSelectionController.color = categoryColor;
+            colorSelectionController.delegate = self;
+           
+            [[self rac_signalForSelector:@selector(colorViewController:didChangeColor:) fromProtocol:@protocol(MSColorSelectionViewControllerDelegate)] subscribeNext:^(RACTuple *tuple) {
+                MSColorSelectionViewController *vc = tuple.first;
+                [item setImage:[UIImage imageWithColor:vc.color size:CGSizeMake(30, 30)]];
+                [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
+            }];
+            
+            if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
+                colorSelectionController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"Done" style:UIBarButtonItemStyleDone handler:^(id sender) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+            }
+            
+            [self presentViewController:navCtrl animated:YES completion:nil];
+            
+        }];
         [self.basicControlsSection addItem:item];
         item;
     });
@@ -101,5 +132,4 @@
         item;
     });
 }
-
 @end
