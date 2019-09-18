@@ -77,7 +77,6 @@
 
     self.nameItem = ({
         RETextItem *item = [RETextItem itemWithTitle:@"Name"];
-        item.keyboardType = UIKeyboardTypeNumberPad;
         item.placeholder = @"input here";
         [self.basicControlsSection addItem:item];
         item;
@@ -91,7 +90,7 @@
     
     self.amountItem = ({
         RETextItem *item = [RETextItem itemWithTitle:@"Amount"];
-        item.keyboardType = UIKeyboardTypeNumberPad;
+        item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
         item.accessoryView = ({
             UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];

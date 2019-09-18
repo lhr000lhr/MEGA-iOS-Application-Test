@@ -92,7 +92,7 @@
     
     self.amountItem = ({
         RETextItem *item = [RETextItem itemWithTitle:@"Amount"];
-        item.keyboardType = UIKeyboardTypeNumberPad;
+        item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
         item.accessoryView = ({
             UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
