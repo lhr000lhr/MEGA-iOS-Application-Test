@@ -14,6 +14,7 @@
 		4B80F9E12330E78F00E5172F /* MGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E02330E78F00E5172F /* MGBaseTableViewController.m */; };
 		4B80F9E52331121500E5172F /* MGCategoryCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E42331121500E5172F /* MGCategoryCreateViewController.m */; };
 		4B80F9E82331129800E5172F /* MGCategoryModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9E72331129800E5172F /* MGCategoryModule.m */; };
+		4B80F9EC2331E80D00E5172F /* MGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9EB2331E80D00E5172F /* MGCategory.m */; };
 		4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335BA2330B13D002B3713 /* MGChartsViewController.m */; };
 		4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */; };
 		4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB335C72330B266002B3713 /* MGCategoryViewController.m */; };
@@ -53,6 +54,8 @@
 		4B80F9E42331121500E5172F /* MGCategoryCreateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryCreateViewController.m; sourceTree = "<group>"; };
 		4B80F9E62331129800E5172F /* MGCategoryModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryModule.h; sourceTree = "<group>"; };
 		4B80F9E72331129800E5172F /* MGCategoryModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryModule.m; sourceTree = "<group>"; };
+		4B80F9EA2331E80D00E5172F /* MGCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategory.h; sourceTree = "<group>"; };
+		4B80F9EB2331E80D00E5172F /* MGCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategory.m; sourceTree = "<group>"; };
 		4BB335B92330B13D002B3713 /* MGChartsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGChartsViewController.h; sourceTree = "<group>"; };
 		4BB335BA2330B13D002B3713 /* MGChartsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGChartsViewController.m; sourceTree = "<group>"; };
 		4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTransactionListViewController.h; sourceTree = "<group>"; };
@@ -137,9 +140,19 @@
 			path = BaseControllers;
 			sourceTree = "<group>";
 		};
+		4B80F9E92331E75C00E5172F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B80F9EA2331E80D00E5172F /* MGCategory.h */,
+				4B80F9EB2331E80D00E5172F /* MGCategory.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4BB335B62330AF45002B3713 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4B80F9E92331E75C00E5172F /* Models */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -483,6 +496,7 @@
 				4B80F9D52330DC6F00E5172F /* MGRecordViewController.m in Sources */,
 				4BF86219233098EA00C0122F /* AppDelegate.m in Sources */,
 				4B80F9E52331121500E5172F /* MGCategoryCreateViewController.m in Sources */,
+				4B80F9EC2331E80D00E5172F /* MGCategory.m in Sources */,
 				4B80F9DA2330DFE400E5172F /* MGReacordModule.m in Sources */,
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
 				4B80F9E82331129800E5172F /* MGCategoryModule.m in Sources */,
