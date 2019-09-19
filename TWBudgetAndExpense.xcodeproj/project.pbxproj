@@ -133,10 +133,10 @@
 		4B324E402332378F0067559A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4B324E3C23322BF10067559A /* MGCategoryViewModel.h */,
-				4B324E3D23322BF10067559A /* MGCategoryViewModel.m */,
 				4B324E412332454C0067559A /* MGCategoryCreateViewModel.h */,
 				4B324E422332454C0067559A /* MGCategoryCreateViewModel.m */,
+				4B324E3C23322BF10067559A /* MGCategoryViewModel.h */,
+				4B324E3D23322BF10067559A /* MGCategoryViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -159,17 +159,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4B80F9D22330DC4000E5172F /* MGTransacation */ = {
+		4B80F9D22330DC4000E5172F /* Transacation */ = {
 			isa = PBXGroup;
 			children = (
-				4B324E4B23337A4D0067559A /* ViewModel */,
 				4B324E47233378C30067559A /* Model */,
+				4B324E4B23337A4D0067559A /* ViewModel */,
 				4B80F9D82330DFE400E5172F /* MGTransacationModule.h */,
 				4B80F9D92330DFE400E5172F /* MGTransacationModule.m */,
 				4B80F9D32330DC6F00E5172F /* MGTransacationViewController.h */,
 				4B80F9D42330DC6F00E5172F /* MGTransacationViewController.m */,
 			);
-			path = MGTransacation;
+			path = Transacation;
 			sourceTree = "<group>";
 		};
 		4B80F9D62330DF6900E5172F /* Protocols */ = {
@@ -213,7 +213,7 @@
 				4B80F9DB2330E40C00E5172F /* BaseControllers */,
 				4BB335C52330B256002B3713 /* Category */,
 				4BB335BC2330B191002B3713 /* Charts */,
-				4B80F9D22330DC4000E5172F /* MGTransacation */,
+				4B80F9D22330DC4000E5172F /* Transacation */,
 				4BB335C12330B23B002B3713 /* Transaction */,
 			);
 			path = Modules;
