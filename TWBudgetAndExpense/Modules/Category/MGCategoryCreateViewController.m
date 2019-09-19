@@ -8,6 +8,8 @@
 
 #import "MGCategoryCreateViewController.h"
 #import <MSColorPicker/MSColorPicker.h>
+#import "MGCategoryCreateViewModel.h"
+#import "MGCategoryViewModel.h"
 
 @interface MGCategoryCreateViewController () <RETableViewManagerDelegate, MSColorSelectionViewControllerDelegate>
 
@@ -19,6 +21,8 @@
 @property (strong, nonatomic) RETextItem *nameItem;
 @property (strong, nonatomic) RETableViewItem *colorItem;
 @property (strong, nonatomic) RETextItem *amountItem;
+
+@property (nonatomic) id<MGCategoryViewModelProtocol> viewModel;
 
 @end
 
@@ -48,8 +52,22 @@
     self.navigationItem.rightBarButtonItem = ({
         UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
             @strongify(self);
-            [self dismissViewControllerAnimated:YES completion:nil];
+
+            // (1) Create a Dog object and then set its properties
+            MGCategory *category = [[MGCategory alloc] init];
+            category.name = @"Rex";
+            category.budget = 200;
+            category.colorHex = @"fff";
+            category.currencyType = 0;
+         
+
+            [RLMRealm.defaultRealm transactionWithBlock:^{
+                [self.viewModel.parent.groups addObject:category];
+
+            }];
+
         }];
+       
         item;
     });
 }
@@ -132,4 +150,8 @@
         item;
     });
 }
+
+#pragma mark - method
+
+
 @end

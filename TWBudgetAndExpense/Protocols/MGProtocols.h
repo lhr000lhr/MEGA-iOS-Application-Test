@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@class RACSignal;
+
+@class RACSignal, MGCategoryParent;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol MGCategoryCreateViewControllerProtocol <NSObject>
+@end
+
+@protocol MGCategoryViewModelProtocol <NSObject>
+@property (nonatomic) MGCategoryParent *parent;
+- (RACSignal *)fetchPinsWithTag:(NSString *)tag offset:(NSUInteger)offset;
+- (RACSignal *)fetchMore;
 @end
 
 NS_ASSUME_NONNULL_END

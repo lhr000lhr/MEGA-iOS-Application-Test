@@ -1,5 +1,5 @@
 //
-//  MGCategoryViewModel.h
+//  MGCategoryCreateViewModel.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/18.
@@ -11,10 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGCategoryViewModel : RVMViewModel
+@interface MGCategoryCreateViewModel : RVMViewModel
 
-@property MGCategoryParent *parent;
-
+@property (strong, nonatomic) MGCategoryParent *Categories;
 
 @end
 
