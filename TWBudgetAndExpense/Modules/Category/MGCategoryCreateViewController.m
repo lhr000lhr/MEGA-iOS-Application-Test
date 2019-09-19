@@ -22,20 +22,29 @@
 @property (strong, nonatomic) RETableViewItem *colorItem;
 @property (strong, nonatomic) RETextItem *amountItem;
 
-@property (nonatomic) id<MGCategoryViewModelProtocol> viewModel;
+@property (strong, nonatomic) MGCategoryViewModel *viewModel;
 
 @end
 
 @implementation MGCategoryCreateViewController
+
+#pragma mark - Lazy initialization
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
     self.title = @"New Category";
+
 }
 
 #pragma mark - Configure Views
+
+- (void)configureWithViewModel:(id<MGCategoryViewModelProtocol>)viewModel {
+    self.viewModel = viewModel;
+
+}
 
 - (void)configureNavigationItem {
     
@@ -60,11 +69,12 @@
             category.colorHex = @"fff";
             category.currencyType = 0;
          
+            [RLMRealm.defaultRealm beginWriteTransaction];
+            [self.viewModel.parent.groups addObject:category];
 
-            [RLMRealm.defaultRealm transactionWithBlock:^{
-                [self.viewModel.parent.groups addObject:category];
+            [RLMRealm.defaultRealm commitWriteTransaction];
 
-            }];
+            [self dismissViewControllerAnimated:YES completion:nil];
 
         }];
        

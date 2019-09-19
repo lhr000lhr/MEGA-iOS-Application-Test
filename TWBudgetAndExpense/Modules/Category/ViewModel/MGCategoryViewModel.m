@@ -10,22 +10,24 @@
 
 @implementation MGCategoryViewModel
 
-
-- (MGCategoryParent *)parent {
-    
-    if (!_parent) {
+- (instancetype)init {
+    self = [super init];
+    if (self) {
         _parent = ({
-            MGCategoryParent *parent = [[MGCategoryParent alloc] init];
-            RLMRealm *realm = RLMRealm.defaultRealm;
-            [realm transactionWithBlock:^{
-                [realm addObject:parent];
-            }];
+            MGCategoryParent *parent = MGCategoryParent.allObjects.firstObject;
+            if (!parent) {
+                MGCategoryParent *parent = [[MGCategoryParent alloc] init];
+                RLMRealm *realm = RLMRealm.defaultRealm;
+                [realm transactionWithBlock:^{
+                    [realm addObject:parent];
+                }];
+            }
             parent;
         });
-       
     }
     
-    return _parent;
+    return self;
 }
+
 
 @end

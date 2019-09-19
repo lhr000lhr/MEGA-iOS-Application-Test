@@ -12,17 +12,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MGCategoryViewModelProtocol <NSObject>
+@property MGCategoryParent *parent;
+- (RACSignal *)fetchPinsWithTag:(NSString *)tag offset:(NSUInteger)offset;
+- (RACSignal *)fetchMore;
+@end
 
 @protocol MGRecordViewControllerProtocol <NSObject>
 @end
 
 @protocol MGCategoryCreateViewControllerProtocol <NSObject>
+- (void)configureWithViewModel:(id<MGCategoryViewModelProtocol>)viewModel;
+
 @end
 
-@protocol MGCategoryViewModelProtocol <NSObject>
-@property (nonatomic) MGCategoryParent *parent;
-- (RACSignal *)fetchPinsWithTag:(NSString *)tag offset:(NSUInteger)offset;
-- (RACSignal *)fetchMore;
-@end
 
 NS_ASSUME_NONNULL_END

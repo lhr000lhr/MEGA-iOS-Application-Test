@@ -7,8 +7,9 @@
 //
 
 #import "MGCategoryViewController.h"
+#import "MGCategoryViewModel.h"
 
-@interface MGCategoryViewController () <RETableViewManagerDelegate>
+@interface MGCategoryViewController () <RETableViewManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 
 @property (strong, nonatomic) UITableView *tableView;
@@ -16,16 +17,25 @@
 @property (strong, nonatomic) RETableViewManager *manager;
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;
 
+@property (strong, nonatomic) MGCategoryViewModel *viewModel;
 
 @end
 
 @implementation MGCategoryViewController
 
+#pragma mark - Lazy initialization
+
+
+
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
+    self.viewModel = [[MGCategoryViewModel alloc] init];
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Category";
-    
+
     
 }
 
@@ -40,6 +50,7 @@
             @strongify(self);
             
             UIViewController <MGCategoryCreateViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGCategoryCreateViewControllerProtocol)];
+            [viewController configureWithViewModel:self.viewModel];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
             
             [self presentViewController:nav animated:YES completion:nil];
@@ -52,10 +63,11 @@
 - (void)configureViews {
     
     
-    
+    @weakify(self);
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        
+        tableView.delegate = self;
+        tableView.dataSource = self;
         [self.view addSubview:tableView];
         [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
@@ -63,19 +75,59 @@
         tableView;
     });
     
-    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
+//    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
+//
+//    self.basicControlsSection = ({
+//        RETableViewSection *section = [RETableViewSection section];
+//        [section addItem:[RETableViewItem itemWithTitle:@"123"]];
+//        [self.manager addSection:section];
+//        section;
+//    });
     
-    self.basicControlsSection = ({
-        RETableViewSection *section = [RETableViewSection section];
-        [section addItem:[RETableViewItem itemWithTitle:@"123"]];
-        [self.manager addSection:section];
-        section;
-    });
-    
-    
-    
+    [[self.viewModel.parent rac_valuesAndChangesForKeyPath:@"groups" options:0 observer:self]
+     subscribeNext:^(RACTuple *info) { // tuple is value, change dictionary
+         @strongify(self);
+         NSDictionary *change = info.second;
+//         NSKeyValueChange kind = [change[NSKeyValueChangeKindKey] intValue];
+//         NSIndexSet *indexes = change[NSKeyValueChangeIndexesKey];
+//         if (indexes && kind == NSKeyValueChangeInsertion) {
+//             [self.tableView insertSections:indexes withRowAnimation:UITableViewRowAnimationAutomatic];
+//         } else {
+             [self.tableView reloadData];
+//         }
+     }];
+
+    [self.tableView reloadData];
+
     
     
 }
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.viewModel.parent.groups.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:@"kk"];
+    }
+    
+    MGCategory *object = self.viewModel.parent.groups[indexPath.row];
+    cell.textLabel.text = object.name;
+    cell.detailTextLabel.text = object.colorHex;
+    
+    return cell;
+}
+
 
 @end
