@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)fetchMore;
 @end
 
-@protocol MGTransacationViewControllerProtocol <NSObject>
+@protocol MGTransactionViewControllerProtocol <NSObject>
 @end
 
 @protocol MGCategoryCreateViewControllerProtocol <NSObject>

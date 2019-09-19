@@ -1,15 +1,15 @@
 //
-//  MGTransacationModule.m
+//  MGTransactionModule.m
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "MGTransacationModule.h"
-#import "MGTransacationViewController.h"
+#import "MGTransactionModule.h"
+#import "MGTransactionViewController.h"
 
-@implementation MGTransacationModule
+@implementation MGTransactionModule
 
 + (void)load {
     JSObjectionInjector *injector = [JSObjection defaultInjector];
@@ -19,7 +19,7 @@
 }
 
 - (void)configure {
-    [self bindClass:[MGTransacationViewController class] toProtocol:@protocol(MGTransacationViewControllerProtocol)];
+    [self bindClass:[MGTransactionViewController class] toProtocol:@protocol(MGTransactionViewControllerProtocol)];
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  MGTransacation.h
+//  MGTransaction.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/19.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGTransacation : RLMObject
+@interface MGTransaction : RLMObject
 
 @property MGCategory *category;
 @property NSDate *createDate;

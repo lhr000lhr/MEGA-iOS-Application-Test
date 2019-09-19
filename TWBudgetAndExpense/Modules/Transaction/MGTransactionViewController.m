@@ -1,14 +1,14 @@
 //
-//  MGTransacationViewController.m
+//  MGTransactionViewController.m
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "MGTransacationViewController.h"
+#import "MGTransactionViewController.h"
 
-@interface MGTransacationViewController () <RETableViewManagerDelegate>
+@interface MGTransactionViewController () <RETableViewManagerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -19,15 +19,17 @@
 @property (strong, nonatomic) REPickerItem *categoryItem;
 @property (strong, nonatomic) RETextItem *amountItem;
 
+@property (strong, nonatomic) MGTransactionViewModel *viewModel;
+
 @end
 
-@implementation MGTransacationViewController
+@implementation MGTransactionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
+    self.viewModel = [[MGTransactionViewModel alloc] init];
     self.title = @"Record";
 }
 
@@ -48,7 +50,9 @@
     self.navigationItem.rightBarButtonItem = ({
         UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
             @strongify(self);
-            [self dismissViewControllerAnimated:YES completion:nil];
+
+
+
         }];
         item;
     });

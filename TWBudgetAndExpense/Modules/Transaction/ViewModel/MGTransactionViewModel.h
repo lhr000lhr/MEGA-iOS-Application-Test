@@ -1,5 +1,5 @@
 //
-//  MGTransacationViewModel.h
+//  MGTransactionViewModel.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/19.
@@ -7,10 +7,13 @@
 //
 
 #import "RVMViewModel.h"
+#import "MGTransaction.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGTransacationViewModel : RVMViewModel
+@interface MGTransactionViewModel : RVMViewModel
+
+@property (strong, nonatomic) MGTransaction *transaction;
 
 @end
 

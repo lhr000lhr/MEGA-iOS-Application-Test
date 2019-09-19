@@ -32,7 +32,7 @@
         UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender) {
             @strongify(self);
             
-            UIViewController <MGTransacationViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGTransacationViewControllerProtocol)];
+            UIViewController <MGTransactionViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGTransactionViewControllerProtocol)];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
 
             [self presentViewController:nav animated:YES completion:nil];
