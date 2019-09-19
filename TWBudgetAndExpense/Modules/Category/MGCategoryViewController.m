@@ -8,7 +8,14 @@
 
 #import "MGCategoryViewController.h"
 
-@interface MGCategoryViewController ()
+@interface MGCategoryViewController () <RETableViewManagerDelegate>
+
+
+@property (strong, nonatomic) UITableView *tableView;
+
+@property (strong, nonatomic) RETableViewManager *manager;
+@property (strong, nonatomic) RETableViewSection *basicControlsSection;
+
 
 @end
 
@@ -44,6 +51,26 @@
 
 - (void)configureViews {
     
+    
+    
+    self.tableView = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        
+        [self.view addSubview:tableView];
+        [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+        tableView;
+    });
+    
+    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
+    
+    self.basicControlsSection = ({
+        RETableViewSection *section = [RETableViewSection section];
+        [section addItem:[RETableViewItem itemWithTitle:@"123"]];
+        [self.manager addSection:section];
+        section;
+    });
     
     
     
