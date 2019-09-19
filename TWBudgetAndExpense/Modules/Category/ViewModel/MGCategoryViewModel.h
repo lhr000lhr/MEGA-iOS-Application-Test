@@ -11,10 +11,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^ViewControllerDismissBlock)(void);
+
 @interface MGCategoryViewModel : RVMViewModel <MGCategoryViewModelProtocol>
 
 @property MGCategoryParent *parent;
+@property (strong, nonatomic) MGCategory *category;
+@property (strong, nonatomic) RACCommand *doneButtonCommand;
+@property (copy, nonatomic) ViewControllerDismissBlock dismissBlock;
 
+- (RACSignal*)checkFormSignal;
 
 @end
 

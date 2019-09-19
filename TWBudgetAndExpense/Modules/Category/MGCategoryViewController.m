@@ -50,7 +50,7 @@
             @strongify(self);
             
             UIViewController <MGCategoryCreateViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGCategoryCreateViewControllerProtocol)];
-            [viewController configureWithViewModel:self.viewModel];
+//            [viewController configureWithViewModel:self.viewModel];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
             
             [self presentViewController:nav animated:YES completion:nil];
@@ -75,29 +75,13 @@
         tableView;
     });
     
-//    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
-//
-//    self.basicControlsSection = ({
-//        RETableViewSection *section = [RETableViewSection section];
-//        [section addItem:[RETableViewItem itemWithTitle:@"123"]];
-//        [self.manager addSection:section];
-//        section;
-//    });
-    
     [[self.viewModel.parent rac_valuesAndChangesForKeyPath:@"groups" options:0 observer:self]
      subscribeNext:^(RACTuple *info) { // tuple is value, change dictionary
          @strongify(self);
-         NSDictionary *change = info.second;
-//         NSKeyValueChange kind = [change[NSKeyValueChangeKindKey] intValue];
-//         NSIndexSet *indexes = change[NSKeyValueChangeIndexesKey];
-//         if (indexes && kind == NSKeyValueChangeInsertion) {
-//             [self.tableView insertSections:indexes withRowAnimation:UITableViewRowAnimationAutomatic];
-//         } else {
-             [self.tableView reloadData];
-//         }
+
+         [self.tableView reloadData];
      }];
 
-    [self.tableView reloadData];
 
     
     

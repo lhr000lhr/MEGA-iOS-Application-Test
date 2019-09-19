@@ -32,8 +32,11 @@
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+    if (!self.viewModel) {
+        [self configureWithViewModel:[[MGCategoryViewModel alloc] init]];
+    }
+    [super viewDidLoad];
     
     self.title = @"New Category";
 
@@ -43,7 +46,11 @@
 
 - (void)configureWithViewModel:(id<MGCategoryViewModelProtocol>)viewModel {
     self.viewModel = viewModel;
-
+    @weakify(self)
+    [self.viewModel setDismissBlock:^{
+        @strongify(self)
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 - (void)configureNavigationItem {
@@ -59,25 +66,8 @@
     });
     
     self.navigationItem.rightBarButtonItem = ({
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
-            @strongify(self);
-
-            // (1) Create a Dog object and then set its properties
-            MGCategory *category = [[MGCategory alloc] init];
-            category.name = @"Rex";
-            category.budget = 200;
-            category.colorHex = @"fff";
-            category.currencyType = 0;
-         
-            [RLMRealm.defaultRealm beginWriteTransaction];
-            [self.viewModel.parent.groups addObject:category];
-
-            [RLMRealm.defaultRealm commitWriteTransaction];
-
-            [self dismissViewControllerAnimated:YES completion:nil];
-
-        }];
-       
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:nil];
+        item.rac_command = self.viewModel.doneButtonCommand;
         item;
     });
 }
@@ -87,7 +77,8 @@
     [super configureViews];
     
     @weakify(self);
-
+   
+    
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         
@@ -109,6 +100,7 @@
     self.nameItem = ({
         RETextItem *item = [RETextItem itemWithTitle:@"Name"];
         item.placeholder = @"input here";
+        RACChannelTo(item, value) = RACChannelTo(self.viewModel.category, name);
         [self.basicControlsSection addItem:item];
         item;
     });
@@ -116,6 +108,7 @@
     self.colorItem = ({
         RETableViewItem *item = [RETableViewItem itemWithTitle:@"Colour"];
         UIColor *categoryColor = [UIColor redColor];
+        self.viewModel.category.colorHex = [UIColor redColor].hexString;
         [item setImage:[UIImage imageWithColor:categoryColor size:CGSizeMake(30, 30)]];
         [item setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         
