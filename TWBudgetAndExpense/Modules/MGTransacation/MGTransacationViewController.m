@@ -1,14 +1,14 @@
 //
-//  MGRecordViewController.m
+//  MGTransacationViewController.m
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "MGRecordViewController.h"
+#import "MGTransacationViewController.h"
 
-@interface MGRecordViewController () <RETableViewManagerDelegate>
+@interface MGTransacationViewController () <RETableViewManagerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation MGRecordViewController
+@implementation MGTransacationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

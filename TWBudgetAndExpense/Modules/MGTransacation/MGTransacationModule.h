@@ -1,5 +1,5 @@
 //
-//  MGReacordModule.h
+//  MGTransacationModule.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGReacordModule : JSObjectionModule
+@interface MGTransacationModule : JSObjectionModule
 
 @end
 

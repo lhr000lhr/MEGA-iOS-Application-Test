@@ -28,8 +28,7 @@
 
 @implementation MGCategoryCreateViewController
 
-#pragma mark - Lazy initialization
-
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     

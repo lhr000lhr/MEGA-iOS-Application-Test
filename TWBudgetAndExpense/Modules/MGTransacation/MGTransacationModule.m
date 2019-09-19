@@ -1,15 +1,15 @@
 //
-//  MGReacordModule.m
+//  MGTransacationModule.m
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import "MGReacordModule.h"
-#import "MGRecordViewController.h"
+#import "MGTransacationModule.h"
+#import "MGTransacationViewController.h"
 
-@implementation MGReacordModule
+@implementation MGTransacationModule
 
 + (void)load {
     JSObjectionInjector *injector = [JSObjection defaultInjector];
@@ -19,7 +19,7 @@
 }
 
 - (void)configure {
-    [self bindClass:[MGRecordViewController class] toProtocol:@protocol(MGRecordViewControllerProtocol)];
+    [self bindClass:[MGTransacationViewController class] toProtocol:@protocol(MGTransacationViewControllerProtocol)];
 }
 
 @end

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MGBaseViewControllerProtocal.h"
+#import "MGBaseViewControllerProtocol.h"
 #import <RETableViewManager/RETableViewManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGBaseTableViewController : UITableViewController <MGBaseViewControllerProtocal>
+@interface MGBaseTableViewController : UITableViewController <MGBaseViewControllerProtocol>
 
 @property (strong, nonatomic) RETableViewManager *manager;
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;

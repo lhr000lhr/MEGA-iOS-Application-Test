@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MGBaseViewControllerProtocal.h"
+#import "MGBaseViewControllerProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGBaseViewController : UIViewController <MGBaseViewControllerProtocal>
+@interface MGBaseViewController : UIViewController <MGBaseViewControllerProtocol>
 
 
 @end

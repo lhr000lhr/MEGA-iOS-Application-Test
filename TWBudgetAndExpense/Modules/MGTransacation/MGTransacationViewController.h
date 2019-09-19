@@ -1,5 +1,5 @@
 //
-//  MGRecordViewController.h
+//  MGTransacationViewController.h
 //  TWBudgetAndExpense
 //
 //  Created by haoran lee on 2019/9/17.
@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGTransacationViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGRecordViewController : MGBaseViewController <MGRecordViewControllerProtocol>
+@interface MGTransacationViewController : MGBaseViewController <MGTransacationViewControllerProtocol>
 
 @end
 
