@@ -12,6 +12,7 @@
 		4B324E432332454C0067559A /* MGCategoryCreateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E422332454C0067559A /* MGCategoryCreateViewModel.m */; };
 		4B324E4A233378EB0067559A /* MGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E49233378EB0067559A /* MGTransaction.m */; };
 		4B324E4E23337B870067559A /* MGTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E4D23337B860067559A /* MGTransactionViewModel.m */; };
+		4B324E512333B7EF0067559A /* MGTransactionListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */; };
 		4B80F9D52330DC6F00E5172F /* MGTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */; };
 		4B80F9DA2330DFE400E5172F /* MGTransactionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D92330DFE400E5172F /* MGTransactionModule.m */; };
 		4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9DD2330E55600E5172F /* MGBaseViewController.m */; };
@@ -52,6 +53,8 @@
 		4B324E49233378EB0067559A /* MGTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransaction.m; sourceTree = "<group>"; };
 		4B324E4C23337B860067559A /* MGTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTransactionViewModel.h; sourceTree = "<group>"; };
 		4B324E4D23337B860067559A /* MGTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionViewModel.m; sourceTree = "<group>"; };
+		4B324E4F2333B7EF0067559A /* MGTransactionListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTransactionListViewModel.h; sourceTree = "<group>"; };
+		4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionListViewModel.m; sourceTree = "<group>"; };
 		4B80F9D32330DC6F00E5172F /* MGTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTransactionViewController.h; sourceTree = "<group>"; };
 		4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionViewController.m; sourceTree = "<group>"; };
 		4B80F9D72330DF8200E5172F /* MGProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGProtocols.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 			children = (
 				4B324E4C23337B860067559A /* MGTransactionViewModel.h */,
 				4B324E4D23337B860067559A /* MGTransactionViewModel.m */,
+				4B324E4F2333B7EF0067559A /* MGTransactionListViewModel.h */,
+				4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				4B324E3E23322BF10067559A /* MGCategoryViewModel.m in Sources */,
 				4B80F9EC2331E80D00E5172F /* MGCategory.m in Sources */,
 				4B80F9DA2330DFE400E5172F /* MGTransactionModule.m in Sources */,
+				4B324E512333B7EF0067559A /* MGTransactionListViewModel.m in Sources */,
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
 				4B324E4A233378EB0067559A /* MGTransaction.m in Sources */,
 				4B324E4E23337B870067559A /* MGTransactionViewModel.m in Sources */,

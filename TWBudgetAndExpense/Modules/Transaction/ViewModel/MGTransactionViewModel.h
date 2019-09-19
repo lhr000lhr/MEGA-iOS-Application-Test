@@ -11,9 +11,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^ViewControllerDismissBlock)(void);
+
 @interface MGTransactionViewModel : RVMViewModel
 
-@property (strong, nonatomic) MGTransaction *transaction;
+@property (strong, nonatomic) MGCategory *selectedCategory;
+@property (strong, nonatomic) NSDate *createDate;
+@property (strong, nonatomic) NSString *amount;
+@property (assign, nonatomic) MGCurrencyType currencyType;
+//@property (strong, nonatomic) RLMResults *result;
+
+@property (strong, nonatomic) RACCommand *doneButtonCommand;
+@property (copy, nonatomic) ViewControllerDismissBlock dismissBlock;
+
+- (NSArray *)categories;
 
 @end
 

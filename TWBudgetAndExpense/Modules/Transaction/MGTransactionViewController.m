@@ -29,7 +29,6 @@
     [super viewDidLoad];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.viewModel = [[MGTransactionViewModel alloc] init];
     self.title = @"Record";
 }
 
@@ -38,7 +37,8 @@
 - (void)configureNavigationItem {
 
     @weakify(self);
-    
+    self.viewModel = [[MGTransactionViewModel alloc] init];
+
     self.navigationItem.leftBarButtonItem = ({
         UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCancel handler:^(id sender) {
             @strongify(self);
@@ -48,12 +48,8 @@
     });
     
     self.navigationItem.rightBarButtonItem = ({
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
-            @strongify(self);
-
-
-
-        }];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:nil];
+        item.rac_command = self.viewModel.doneButtonCommand;
         item;
     });
     
@@ -83,12 +79,19 @@
     
     self.dateItem = ({
         REDateTimeItem *item = [REDateTimeItem itemWithTitle:@"Date" value:[NSDate date] placeholder:nil format:@"yyyy/MM/dd" datePickerMode:UIDatePickerModeDate];
+        RACChannelTo(item, value) = RACChannelTo(self.viewModel, createDate);
         [self.basicControlsSection addItem:item];
         item;
     });
     
     self.categoryItem = ({
-        REPickerItem *item = [REPickerItem itemWithTitle:@"Category" value:@[] placeholder:nil options:nil];
+        
+        RLMResults *Categories = [MGCategory allObjects];
+        REPickerItem *item = [REPickerItem itemWithTitle:@"Category" value:nil placeholder:nil options:@[[self.viewModel categories]]];
+        item.onChange = ^(REPickerItem *item){
+            NSLog(@"Value: %@", item.value);
+        };
+        
         [self.basicControlsSection addItem:item];
       
         item;
@@ -103,6 +106,8 @@
             segmentedControl.selectedSegmentIndex = 0;
             segmentedControl;
         });
+        RACChannelTo(item, value) = RACChannelTo(self.viewModel, amount);
+
         [self.basicControlsSection addItem:item];
         item;
     });

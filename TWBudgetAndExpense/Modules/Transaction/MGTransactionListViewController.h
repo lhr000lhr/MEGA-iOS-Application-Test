@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGTransactionListViewController : UIViewController
+@interface MGTransactionListViewController : MGBaseViewController
 
 @end
 

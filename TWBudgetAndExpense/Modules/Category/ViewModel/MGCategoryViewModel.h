@@ -19,8 +19,8 @@ typedef void(^ViewControllerDismissBlock)(void);
 @property (strong, nonatomic) MGCategory *category;
 @property (strong, nonatomic) RACCommand *doneButtonCommand;
 @property (copy, nonatomic) ViewControllerDismissBlock dismissBlock;
-
-- (RACSignal*)checkFormSignal;
+@property (strong, nonatomic) RLMResults *result;
+- (RACSignal *)checkFormSignal;
 
 @end
 

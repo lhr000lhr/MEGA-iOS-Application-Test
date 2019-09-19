@@ -10,6 +10,13 @@
 
 @implementation MGCategoryViewModel
 
+- (RLMResults *)result {
+    if (!_result) {
+        _result = [MGCategory allObjects];
+    }
+    return _result;
+}
+
 - (MGCategory *)category {
     if (!_category) {
         _category = [[MGCategory alloc] init];
@@ -53,6 +60,7 @@
             newCategory.colorHex = self.category.colorHex;
             newCategory.currencyType = self.category.currencyType;
             newCategory.budget = self.category.budget;
+            
             
             [RLMRealm.defaultRealm beginWriteTransaction];
            

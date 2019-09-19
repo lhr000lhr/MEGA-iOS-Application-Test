@@ -10,6 +10,10 @@
 
 @implementation MGCategory
 
++ (NSString *)primaryKey {
+    return @"name";
+}
+
 @end
 
 @implementation MGCategoryParent

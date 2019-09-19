@@ -18,6 +18,7 @@
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;
 
 @property (strong, nonatomic) MGCategoryViewModel *viewModel;
+@property (nonatomic, strong) RLMNotificationToken *notification;
 
 @end
 
@@ -75,15 +76,11 @@
         tableView;
     });
     
-    [[self.viewModel.parent rac_valuesAndChangesForKeyPath:@"groups" options:0 observer:self]
-     subscribeNext:^(RACTuple *info) { // tuple is value, change dictionary
-         @strongify(self);
 
-         [self.tableView reloadData];
-     }];
-
-
-    
+    self.notification = [[MGCategory allObjects] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
+            [self.tableView reloadData];
+    }];
+  
     
 }
 
