@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
 target 'TWBudgetAndExpense' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -14,10 +14,12 @@ target 'TWBudgetAndExpense' do
   pod 'MSColorPicker'
   pod 'ReactiveCocoa', '2.5'
   pod 'DZNEmptyDataSet'
+  pod 'AFNetworking', '~>2.2'
   pod 'ReactiveViewModel', '~>0.1'
   pod 'RETableViewManager'
   pod 'FDFullscreenPopGesture', '~> 1.1'
   pod 'UINavigationItem+Loading', '~> 1.1'
+  pod 'AFNetworking-RACExtensions', '~>0.1'
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.4.beta'
 
 

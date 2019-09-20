@@ -13,6 +13,9 @@
 		4B324E4A233378EB0067559A /* MGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E49233378EB0067559A /* MGTransaction.m */; };
 		4B324E4E23337B870067559A /* MGTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E4D23337B860067559A /* MGTransactionViewModel.m */; };
 		4B324E512333B7EF0067559A /* MGTransactionListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */; };
+		4B324E56233444280067559A /* MGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E54233444280067559A /* MGTableViewCell.m */; };
+		4B324E57233444280067559A /* MGTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B324E55233444280067559A /* MGTableViewCell.xib */; };
+		4B324E5A233448880067559A /* MGAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E59233448880067559A /* MGAPIManager.m */; };
 		4B80F9D52330DC6F00E5172F /* MGTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */; };
 		4B80F9DA2330DFE400E5172F /* MGTransactionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D92330DFE400E5172F /* MGTransactionModule.m */; };
 		4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9DD2330E55600E5172F /* MGBaseViewController.m */; };
@@ -55,6 +58,11 @@
 		4B324E4D23337B860067559A /* MGTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionViewModel.m; sourceTree = "<group>"; };
 		4B324E4F2333B7EF0067559A /* MGTransactionListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTransactionListViewModel.h; sourceTree = "<group>"; };
 		4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionListViewModel.m; sourceTree = "<group>"; };
+		4B324E53233444280067559A /* MGTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTableViewCell.h; sourceTree = "<group>"; };
+		4B324E54233444280067559A /* MGTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTableViewCell.m; sourceTree = "<group>"; };
+		4B324E55233444280067559A /* MGTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGTableViewCell.xib; sourceTree = "<group>"; };
+		4B324E58233448880067559A /* MGAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAPIManager.h; sourceTree = "<group>"; };
+		4B324E59233448880067559A /* MGAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAPIManager.m; sourceTree = "<group>"; };
 		4B80F9D32330DC6F00E5172F /* MGTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTransactionViewController.h; sourceTree = "<group>"; };
 		4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionViewController.m; sourceTree = "<group>"; };
 		4B80F9D72330DF8200E5172F /* MGProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGProtocols.h; sourceTree = "<group>"; };
@@ -164,9 +172,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4B324E52233443DE0067559A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B324E53233444280067559A /* MGTableViewCell.h */,
+				4B324E54233444280067559A /* MGTableViewCell.m */,
+				4B324E55233444280067559A /* MGTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4B80F9D22330DC4000E5172F /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				4B324E52233443DE0067559A /* View */,
 				4B324E47233378C30067559A /* Model */,
 				4B324E4B23337A4D0067559A /* ViewModel */,
 				4B80F9D82330DFE400E5172F /* MGTransactionModule.h */,
@@ -210,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				4B80F9E92331E75C00E5172F /* Models */,
+				4B324E58233448880067559A /* MGAPIManager.h */,
+				4B324E59233448880067559A /* MGAPIManager.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -397,6 +418,7 @@
 				4BF86227233098EA00C0122F /* LaunchScreen.storyboard in Resources */,
 				4BF86224233098EA00C0122F /* Assets.xcassets in Resources */,
 				4BF86222233098EA00C0122F /* Main.storyboard in Resources */,
+				4B324E57233444280067559A /* MGTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,9 +564,11 @@
 			files = (
 				4B324E432332454C0067559A /* MGCategoryCreateViewModel.m in Sources */,
 				4B80F9E12330E78F00E5172F /* MGBaseTableViewController.m in Sources */,
+				4B324E5A233448880067559A /* MGAPIManager.m in Sources */,
 				4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */,
 				4B80F9D52330DC6F00E5172F /* MGTransactionViewController.m in Sources */,
 				4BF86219233098EA00C0122F /* AppDelegate.m in Sources */,
+				4B324E56233444280067559A /* MGTableViewCell.m in Sources */,
 				4B80F9E52331121500E5172F /* MGCategoryCreateViewController.m in Sources */,
 				4B324E3E23322BF10067559A /* MGCategoryViewModel.m in Sources */,
 				4B80F9EC2331E80D00E5172F /* MGCategory.m in Sources */,

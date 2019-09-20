@@ -6,11 +6,12 @@
 //  Copyright © 2019 MEGA. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//#import <AFNetworking.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGAPIManager : AFHTTPRequestOperationManager
+@interface MGAPIManager : NSObject
 
 @end
 

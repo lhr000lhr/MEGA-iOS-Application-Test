@@ -1,4 +1,28 @@
 PODS:
+  - AFNetworking (2.7.0):
+    - AFNetworking/NSURLConnection (= 2.7.0)
+    - AFNetworking/NSURLSession (= 2.7.0)
+    - AFNetworking/Reachability (= 2.7.0)
+    - AFNetworking/Security (= 2.7.0)
+    - AFNetworking/Serialization (= 2.7.0)
+    - AFNetworking/UIKit (= 2.7.0)
+  - AFNetworking-RACExtensions (0.1.6):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking/NSURLConnection (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.7.0)
+  - AFNetworking/Security (2.7.0)
+  - AFNetworking/Serialization (2.7.0)
+  - AFNetworking/UIKit (2.7.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -44,6 +68,8 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.2)
+  - AFNetworking-RACExtensions (~> 0.1)
   - BlocksKit
   - DZNEmptyDataSet
   - FDFullscreenPopGesture (~> 1.1)
@@ -61,6 +87,8 @@ DEPENDENCIES:
   - YYKit
 
 SPEC CHECKSUMS:
+  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
+  AFNetworking-RACExtensions: 501ab1564f5be65e01fe3017cda7bba25764c20d
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -78,6 +106,6 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 03c6e0cdf49e22c21974f2c69238197dba036acc
+PODFILE CHECKSUM: ec2d574085925b91d71d956dd8eaf7bc4cbfb4d4
 
 COCOAPODS: 1.4.0

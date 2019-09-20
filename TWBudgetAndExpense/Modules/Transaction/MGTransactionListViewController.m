@@ -34,6 +34,24 @@
 
 #pragma mark - Configure Views
 
+- (void)configureNavigationItem {
+    
+    @weakify(self);
+    
+    self.navigationItem.rightBarButtonItem = ({
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender) {
+            @strongify(self);
+            
+            UIViewController <MGTransactionViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGTransactionViewControllerProtocol)];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+            
+            [self presentViewController:nav animated:YES completion:nil];
+        }];
+        item;
+    });
+    
+}
+
 - (void)configureViews {
     
     
@@ -74,13 +92,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2
                                       reuseIdentifier:@"kk"];
     }
     
     MGTransaction *object = self.viewModel.result[indexPath.row];
     cell.textLabel.text = object.category.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %lf",object.amount];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %0.2lf",object.amount];
+    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.colorHex] size:CGSizeMake(30, 30)];
     
     
     return cell;
