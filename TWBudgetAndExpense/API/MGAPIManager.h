@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import <AFNetworking.h>
+#import <AFNetworking.h>
+
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MGAPIManager : NSObject
+@interface MGAPIManager : AFHTTPRequestOperationManager
+
++ (instancetype)sharedManager;
 
 @end
 

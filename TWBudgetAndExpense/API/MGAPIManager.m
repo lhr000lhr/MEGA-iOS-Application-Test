@@ -7,7 +7,18 @@
 //
 
 #import "MGAPIManager.h"
+#import <ReactiveCocoa.h>
+#import <AFNetworking-RACExtensions/AFHTTPRequestOperationManager+RACSupport.h>
 
 @implementation MGAPIManager
+
++ (instancetype)sharedManager {
+    static MGAPIManager *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [self manager];
+    });
+    return instance;
+}
 
 @end
