@@ -123,6 +123,7 @@
             [[self rac_signalForSelector:@selector(colorViewController:didChangeColor:) fromProtocol:@protocol(MSColorSelectionViewControllerDelegate)] subscribeNext:^(RACTuple *tuple) {
                 MSColorSelectionViewController *vc = tuple.first;
                 [item setImage:[UIImage imageWithColor:vc.color size:CGSizeMake(30, 30)]];
+                self.viewModel.category.colorHex = [vc.color hexString];
                 [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
             }];
             
