@@ -8,17 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSignal, MGCategoryParent;
+@class RACSignal, MGCategoryParent, MGTransaction;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MGCategoryViewModelProtocol <NSObject>
-@property MGCategoryParent *parent;
-- (RACSignal *)fetchPinsWithTag:(NSString *)tag offset:(NSUInteger)offset;
-- (RACSignal *)fetchMore;
+@property (strong, nonatomic) MGCategoryParent *parent;
+
 @end
 
 @protocol MGTransactionViewControllerProtocol <NSObject>
+
+- (void)configureWithTransaction:(MGTransaction *)transaction;
+
+
 @end
 
 @protocol MGCategoryCreateViewControllerProtocol <NSObject>

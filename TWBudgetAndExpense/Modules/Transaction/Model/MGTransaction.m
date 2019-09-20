@@ -10,8 +10,20 @@
 
 @implementation MGTransaction
 
-+ (NSDictionary *)linkingObjectsProperties {
-    return @{@"category":[RLMPropertyDescriptor descriptorWithClass:NSClassFromString(@"MGCategory") propertyName:@"transactions"]};
-}
+//+ (NSDictionary *)linkingObjectsProperties {
+//    return @{
+//             @"category" : [RLMPropertyDescriptor descriptorWithClass:NSClassFromString(@"MGCategory")
+//                                                         propertyName:@"transactions"]
+//             };
+//}
 
+//+ (NSString *)primaryKey {
+//    return @"createDate";
+//}
+
+//+ (NSDictionary *)defaultPropertyValues {
+//    return @{
+//             @"createDate" : [NSDate date],
+//             };
+//}
 @end

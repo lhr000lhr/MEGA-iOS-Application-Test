@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSDate *createDate;
 @property double amount;
 @property MGCurrencyType currencyType;
-@property (readonly) RLMLinkingObjects *category;
+@property MGCategory *category;
+
 @end
 
 NS_ASSUME_NONNULL_END

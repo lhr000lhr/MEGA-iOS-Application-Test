@@ -14,4 +14,11 @@
     return @"name";
 }
 
++ (NSDictionary *)linkingObjectsProperties {
+    return @{
+             @"transactions" : [RLMPropertyDescriptor descriptorWithClass:NSClassFromString(@"MGTransaction")
+                                                         propertyName:@"category"]
+             };
+}
+
 @end

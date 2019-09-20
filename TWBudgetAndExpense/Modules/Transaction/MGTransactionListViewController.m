@@ -87,8 +87,7 @@
     return self.viewModel.result.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
     
     if (!cell) {
@@ -97,12 +96,33 @@
     }
     
     MGTransaction *object = self.viewModel.result[indexPath.row];
-    cell.textLabel.text = object.category.firstObject[@"name"];
+    cell.textLabel.text = object.category.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %0.2lf",object.amount];
-    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.firstObject[@"colorHex"]] size:CGSizeMake(30, 30)];
+    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.colorHex] size:CGSizeMake(30, 30)];
     
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        RLMRealm *realm = RLMRealm.defaultRealm;
+        [realm beginWriteTransaction];
+        [realm deleteObject:self.viewModel.result[indexPath.row]];
+        [realm commitWriteTransaction];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    MGTransaction *transaction = self.viewModel.result[indexPath.row];
+   
+    UIViewController <MGTransactionViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGTransactionViewControllerProtocol)];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [viewController configureWithTransaction:transaction];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

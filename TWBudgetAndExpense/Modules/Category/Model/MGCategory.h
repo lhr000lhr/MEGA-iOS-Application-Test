@@ -28,7 +28,8 @@ typedef NS_ENUM(NSInteger, MGCurrencyType) {
 @property double budget;
 @property MGCurrencyType currencyType;
 
-@property RLMArray<MGTransaction *><MGTransaction> *transactions;
+
+@property (readonly) RLMLinkingObjects *transactions;
 
 @end
 

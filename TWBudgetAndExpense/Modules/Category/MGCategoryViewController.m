@@ -112,5 +112,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        RLMRealm *realm = RLMRealm.defaultRealm;
+        [realm beginWriteTransaction];
+        [realm deleteObject:self.viewModel.result[indexPath.row]];
+        [realm commitWriteTransaction];
+    }
+}
+
 
 @end

@@ -24,6 +24,9 @@
     return self;
 }
 
+
+
+
 - (NSArray *)categories {
 
     NSMutableArray *categories = @[].mutableCopy;
@@ -57,21 +60,39 @@
             
             self.active = YES;
             
-            // (1) Create a Dog object and then set its properties
-            
-            MGTransaction *newTransaction = [[MGTransaction alloc] init];
-            newTransaction.createDate = self.createDate;
-            newTransaction.amount = [self.amount doubleValue];
-            newTransaction.currencyType = self.currencyType;
-            
             RLMResults *results = [MGCategory objectsWhere:[NSString stringWithFormat:@"name = '%@'",self.selectedCategoryName]];
             MGCategory *category = results.firstObject;
             
-            [RLMRealm.defaultRealm beginWriteTransaction];
-            
-            [category.transactions addObject:newTransaction];
-            
-            [RLMRealm.defaultRealm commitWriteTransaction];
+            // (1) Create a MGTransaction object and then set its properties
+            if (!self.transaction) {
+                
+                MGTransaction *newTransaction = [[MGTransaction alloc] init];
+                newTransaction.createDate = self.createDate;
+                newTransaction.amount = [self.amount doubleValue];
+                newTransaction.currencyType = self.currencyType;
+                newTransaction.category = category;
+               
+                [RLMRealm.defaultRealm beginWriteTransaction];
+                
+                [RLMRealm.defaultRealm addObject:newTransaction];
+                
+                [RLMRealm.defaultRealm commitWriteTransaction];
+                
+            } else {
+                
+ 
+                [[RLMRealm defaultRealm] transactionWithBlock:^{
+                    
+                    self.transaction.createDate = self.createDate;
+                    self.transaction.amount = [self.amount doubleValue];
+                    self.transaction.currencyType = self.currencyType;
+                    
+                    self.transaction.category = category;
+
+                }];
+                
+ 
+            }
             
             if (self.dismissBlock) {
                 self.dismissBlock();

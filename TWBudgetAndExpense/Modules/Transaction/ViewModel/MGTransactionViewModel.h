@@ -16,8 +16,10 @@ typedef void(^ViewControllerDismissBlock)(void);
 
 @interface MGTransactionViewModel : RVMViewModel
 
+@property (strong, nonatomic) MGTransaction *transaction;
 @property (strong, nonatomic) NSString *selectedCategoryName;
 @property (strong, nonatomic) NSDate *createDate;
+@property (strong, nonatomic) NSDate *transactionDate;
 @property (strong, nonatomic) NSString *amount;
 @property (assign, nonatomic) MGCurrencyType currencyType;
 //@property (strong, nonatomic) RLMResults *result;
