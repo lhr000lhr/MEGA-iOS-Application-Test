@@ -20,7 +20,7 @@
 
 @property (strong, nonatomic) RETextItem *nameItem;
 @property (strong, nonatomic) RETableViewItem *colorItem;
-@property (strong, nonatomic) RETextItem *amountItem;
+@property (strong, nonatomic) RETextItem *budgetItem;
 
 @property (strong, nonatomic) MGCategoryViewModel *viewModel;
 
@@ -140,10 +140,14 @@
         item;
     });
     
-    self.amountItem = ({
-        RETextItem *item = [RETextItem itemWithTitle:@"Amount"];
+    self.budgetItem = ({
+        RETextItem *item = [RETextItem itemWithTitle:@"Budget"];
         item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
+        [item setOnChange:^(RETextItem *item) {
+            self.viewModel.category.budget = [item.value doubleValue];
+        }];
+
         item.accessoryView = ({
             UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
             segmentedControl.selectedSegmentIndex = 0;

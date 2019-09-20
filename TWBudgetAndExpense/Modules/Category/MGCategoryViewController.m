@@ -105,7 +105,8 @@
     
     MGCategory *object = self.viewModel.parent.groups[indexPath.row];
     cell.textLabel.text = object.name;
-    cell.detailTextLabel.text = object.colorHex;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount:%.2lf",object.budget];
+    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex] size:CGSizeMake(30, 30)];
     
     return cell;
 }
