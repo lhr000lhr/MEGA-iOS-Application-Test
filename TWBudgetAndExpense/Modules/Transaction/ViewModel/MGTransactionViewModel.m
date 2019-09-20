@@ -65,11 +65,11 @@
             newTransaction.currencyType = self.currencyType;
             
             RLMResults *results = [MGCategory objectsWhere:[NSString stringWithFormat:@"name = '%@'",self.selectedCategoryName]];
-            newTransaction.category = results.firstObject;
+            MGCategory *category = results.firstObject;
             
             [RLMRealm.defaultRealm beginWriteTransaction];
             
-            [RLMRealm.defaultRealm addObject:newTransaction];
+            [category.transactions addObject:newTransaction];
             
             [RLMRealm.defaultRealm commitWriteTransaction];
             

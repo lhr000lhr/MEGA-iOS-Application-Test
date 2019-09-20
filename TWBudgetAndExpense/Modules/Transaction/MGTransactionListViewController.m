@@ -97,9 +97,9 @@
     }
     
     MGTransaction *object = self.viewModel.result[indexPath.row];
-    cell.textLabel.text = object.category.name;
+    cell.textLabel.text = object.category.firstObject[@"name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %0.2lf",object.amount];
-    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.colorHex] size:CGSizeMake(30, 30)];
+    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.firstObject[@"colorHex"]] size:CGSizeMake(30, 30)];
     
     
     return cell;

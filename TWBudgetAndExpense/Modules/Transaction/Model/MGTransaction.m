@@ -10,4 +10,8 @@
 
 @implementation MGTransaction
 
++ (NSDictionary *)linkingObjectsProperties {
+    return @{@"category":[RLMPropertyDescriptor descriptorWithClass:NSClassFromString(@"MGCategory") propertyName:@"transactions"]};
+}
+
 @end

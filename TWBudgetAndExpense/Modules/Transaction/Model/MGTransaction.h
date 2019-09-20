@@ -11,13 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface MGTransaction : RLMObject
 
-@property MGCategory *category;
 @property NSDate *createDate;
 @property double amount;
 @property MGCurrencyType currencyType;
-
+@property (readonly) RLMLinkingObjects *category;
 @end
 
 NS_ASSUME_NONNULL_END

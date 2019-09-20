@@ -8,14 +8,18 @@
 
 #import "RLMObject.h"
 
+
+@class MGTransaction;
+
 NS_ASSUME_NONNULL_BEGIN
+
+RLM_ARRAY_TYPE(MGTransaction)
 
 typedef NS_ENUM(NSInteger, MGCurrencyType) {
     MGCurrencyTypeNZD = 1,
     MGCurrencyTypeUSD,
  };
 
-RLM_ARRAY_TYPE(MGCategory)
 
 @interface MGCategory : RLMObject
 
@@ -23,6 +27,8 @@ RLM_ARRAY_TYPE(MGCategory)
 @property NSString *colorHex;
 @property double budget;
 @property MGCurrencyType currencyType;
+
+@property RLMArray<MGTransaction *><MGTransaction> *transactions;
 
 @end
 
