@@ -38,7 +38,11 @@
 
     @weakify(self);
     self.viewModel = [[MGTransactionViewModel alloc] init];
+    [self.viewModel setDismissBlock:^{
+        @strongify(self);
 
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
     self.navigationItem.leftBarButtonItem = ({
         UIBarButtonItem *item = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCancel handler:^(id sender) {
             @strongify(self);

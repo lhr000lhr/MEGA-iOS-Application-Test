@@ -15,7 +15,3 @@
 }
 
 @end
-
-@implementation MGCategoryParent
-
-@end

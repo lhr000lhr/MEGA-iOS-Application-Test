@@ -78,7 +78,8 @@
     
 
     self.notification = [[MGCategory allObjects] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
-            [self.tableView reloadData];
+        @strongify(self);
+        [self.tableView reloadData];
     }];
   
     
@@ -91,7 +92,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModel.parent.groups.count;
+    return self.viewModel.result.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,7 +104,7 @@
                                       reuseIdentifier:@"kk"];
     }
     
-    MGCategory *object = self.viewModel.parent.groups[indexPath.row];
+    MGCategory *object = self.viewModel.result[indexPath.row];
     cell.textLabel.text = object.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"amount:%.2lf",object.budget];
     cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex] size:CGSizeMake(30, 30)];

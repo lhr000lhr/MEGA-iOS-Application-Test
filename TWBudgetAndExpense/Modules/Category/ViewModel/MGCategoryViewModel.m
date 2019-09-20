@@ -27,17 +27,6 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _parent = ({
-            MGCategoryParent *parent = MGCategoryParent.allObjects.firstObject;
-            if (!parent) {
-                MGCategoryParent *parent = [[MGCategoryParent alloc] init];
-                RLMRealm *realm = RLMRealm.defaultRealm;
-                [realm transactionWithBlock:^{
-                    [realm addObject:parent];
-                }];
-            }
-            parent;
-        });
     }
     
     return self;
@@ -64,7 +53,7 @@
             
             [RLMRealm.defaultRealm beginWriteTransaction];
            
-            [self.parent.groups addObject:newCategory];
+            [RLMRealm.defaultRealm addObject:newCategory];
             
             [RLMRealm.defaultRealm commitWriteTransaction];
             

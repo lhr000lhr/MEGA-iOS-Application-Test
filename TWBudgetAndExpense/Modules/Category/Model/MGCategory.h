@@ -26,10 +26,4 @@ RLM_ARRAY_TYPE(MGCategory)
 
 @end
 
-@interface MGCategoryParent : RLMObject
-
-@property RLMArray <MGCategory *><MGCategory> *groups;
-
-@end
-
 NS_ASSUME_NONNULL_END
