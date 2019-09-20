@@ -7,18 +7,22 @@
 //
 
 #import "MGTransactionViewModel.h"
+#import "MGAPIManager.h"
+#import "MGExchangeRateModel.h"
 
 @implementation MGTransactionViewModel
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-//        _transaction = [[MGTransaction alloc] init];
+        self.exchangeRate = [[MGExchangeRate allObjects] lastObject];
+        if (!self.exchangeRate) {
+            self.exchangeRate = [[MGExchangeRate alloc] init];
+        }
     }
-    
+    [self updateExchangeRate];
     return self;
 }
-
 
 - (NSArray *)categories {
 
@@ -30,6 +34,18 @@
     }
     return categories.copy;
 }
+
+- (void)updateExchangeRate {
+    [[[MGAPIManager sharedManager] fetchExchangeRate] subscribeNext:^(MGExchangeRateModel *rateModel) {
+        
+        [RLMRealm.defaultRealm beginWriteTransaction];
+        self.exchangeRate.rate = [rateModel.quotes doubleValueForKey:@"USDNZD" default:1];
+        [RLMRealm.defaultRealm commitWriteTransaction];
+        NSLog(@"current rate is %lf",self.exchangeRate.rate);
+        
+    }];
+}
+
 
 - (RACCommand *)doneButtonCommand {
     
