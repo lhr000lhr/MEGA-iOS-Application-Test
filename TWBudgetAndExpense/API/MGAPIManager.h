@@ -13,9 +13,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString *const kBaseUrlHttp = @"http://apilayer.net";
+
 @interface MGAPIManager : AFHTTPRequestOperationManager
 
 + (instancetype)sharedManager;
+
+- (RACSignal *)fetchExchangeRate;
 
 @end
 

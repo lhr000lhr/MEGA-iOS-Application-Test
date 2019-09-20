@@ -121,7 +121,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
 #pragma clang diagnostic pop
 }
 
-+ (void)setSharedImageCache:(__nullable id <AFImageCache>)imageCache {
++ (void)setSharedImageCache:(id <AFImageCache>)imageCache {
     objc_setAssociatedObject(self, @selector(sharedImageCache), imageCache, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -165,7 +165,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
 - (void)setImageForState:(UIControlState)state
           withURLRequest:(NSURLRequest *)urlRequest
         placeholderImage:(UIImage *)placeholderImage
-                 success:(void (^)(NSURLRequest *request, NSHTTPURLResponse * __nullable response, UIImage *image))success
+                 success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image))success
                  failure:(void (^)(NSError *error))failure
 {
     [self cancelImageRequestOperationForState:state];
@@ -173,7 +173,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
     UIImage *cachedImage = [[[self class] sharedImageCache] cachedImageForRequest:urlRequest];
     if (cachedImage) {
         if (success) {
-            success(urlRequest, nil, cachedImage);
+            success(nil, nil, cachedImage);
         } else {
             [self setImage:cachedImage forState:state];
         }
@@ -187,7 +187,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
         __weak __typeof(self)weakSelf = self;
         AFHTTPRequestOperation *imageRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         imageRequestOperation.responseSerializer = self.imageResponseSerializer;
-        [imageRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id __nullable responseObject) {
+        [imageRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             if ([[urlRequest URL] isEqual:[operation.request URL]]) {
                 if (success) {
@@ -231,7 +231,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
 - (void)setBackgroundImageForState:(UIControlState)state
                     withURLRequest:(NSURLRequest *)urlRequest
                   placeholderImage:(UIImage *)placeholderImage
-                           success:(void (^)(NSURLRequest *request, NSHTTPURLResponse * __nullable response, UIImage *image))success
+                           success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image))success
                            failure:(void (^)(NSError *error))failure
 {
     [self cancelBackgroundImageRequestOperationForState:state];
@@ -239,7 +239,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
     UIImage *cachedImage = [[[self class] sharedImageCache] cachedImageForRequest:urlRequest];
     if (cachedImage) {
         if (success) {
-            success(urlRequest, nil, cachedImage);
+            success(nil, nil, cachedImage);
         } else {
             [self setBackgroundImage:cachedImage forState:state];
         }
@@ -253,7 +253,7 @@ static const char * af_backgroundImageRequestOperationKeyForState(UIControlState
         __weak __typeof(self)weakSelf = self;
         AFHTTPRequestOperation *backgroundImageRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         backgroundImageRequestOperation.responseSerializer = self.imageResponseSerializer;
-        [backgroundImageRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id __nullable responseObject) {
+        [backgroundImageRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             if ([[urlRequest URL] isEqual:[operation.request URL]]) {
                 if (success) {

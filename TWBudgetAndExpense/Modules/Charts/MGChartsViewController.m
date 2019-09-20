@@ -7,6 +7,8 @@
 //
 
 #import "MGChartsViewController.h"
+#import "MGAPIManager.h"
+#import "MGExchangeRateModel.h"
 
 @interface MGChartsViewController ()
 
@@ -18,7 +20,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Chart";
+    [[[MGAPIManager sharedManager] fetchExchangeRate] subscribeNext:^(MGExchangeRateModel *rateModel) {
+ 
 
+
+    }];
 
 }
 
