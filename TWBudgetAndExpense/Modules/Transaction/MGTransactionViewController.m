@@ -57,7 +57,8 @@
 
 - (void)configureViews {
     [super configureViews];
-    
+    @weakify(self);
+
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         
@@ -86,12 +87,23 @@
     
     self.categoryItem = ({
         
-        RLMResults *Categories = [MGCategory allObjects];
         REPickerItem *item = [REPickerItem itemWithTitle:@"Category" value:nil placeholder:nil options:@[[self.viewModel categories]]];
-        item.onChange = ^(REPickerItem *item){
-            NSLog(@"Value: %@", item.value);
-        };
-        
+        [[RACSignal combineLatest:@[RACObserve(item, value)]
+                           reduce:^id(NSArray *value){
+                               return value.firstObject;
+                           }]
+         subscribeNext:^(NSString *selectedCategoryName) {
+             @strongify(self)
+
+             self.viewModel.selectedCategoryName = selectedCategoryName;
+         }];
+//        item.onChange = ^(REPickerItem *item){
+//            NSLog(@"Category name is: %@", item.value);
+//            NSString *selectedName = item.value.firstObject;
+//            RLMResults *results = [MGCategory objectsWhere:[NSString stringWithFormat:@"name = '%@'",selectedName]];
+//            NSLog(@"%@",results);
+//        };
+//        
         [self.basicControlsSection addItem:item];
       
         item;

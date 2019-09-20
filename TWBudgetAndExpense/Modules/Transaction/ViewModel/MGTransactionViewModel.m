@@ -64,6 +64,9 @@
             newTransaction.amount = [self.amount doubleValue];
             newTransaction.currencyType = self.currencyType;
             
+            RLMResults *results = [MGCategory objectsWhere:[NSString stringWithFormat:@"name = '%@'",self.selectedCategoryName]];
+            newTransaction.category = results.firstObject;
+            
             [RLMRealm.defaultRealm beginWriteTransaction];
             
             [RLMRealm.defaultRealm addObject:newTransaction];
@@ -85,10 +88,10 @@
 - (RACSignal*)checkFormSignal {
     
     RACSignal *amountSignal = RACObserve(self, amount);
-    RACSignal *categorySignal = RACObserve(self, selectedCategory);
+    RACSignal *categorySignal = RACObserve(self, selectedCategoryName);
     
-    return [RACSignal combineLatest:@[amountSignal, categorySignal, RACObserve(self, createDate)] reduce:^(NSString *amount, MGCategory *selectedCategory, NSDate *createDate) {
-        BOOL result = amount.length > 0 && createDate;
+    return [RACSignal combineLatest:@[amountSignal, categorySignal, RACObserve(self, createDate)] reduce:^(NSString *amount, NSString *selectedCategoryName, NSDate *createDate) {
+        BOOL result = amount.length > 0 && createDate && selectedCategoryName;
         
         return @(result);
     }];

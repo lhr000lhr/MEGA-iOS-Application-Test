@@ -92,7 +92,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:@"kk"];
     }
     
