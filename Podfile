@@ -17,6 +17,7 @@ target 'TWBudgetAndExpense' do
   pod 'AFNetworking', '~>2.2'
   pod 'ReactiveViewModel', '~>0.1'
   pod 'RETableViewManager'
+  pod 'ChameleonFramework'
   pod 'FDFullscreenPopGesture', '~> 1.1'
   pod 'UINavigationItem+Loading', '~> 1.1'
   pod 'AFNetworking-RACExtensions', '~>0.1.8'

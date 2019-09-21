@@ -27,6 +27,7 @@
 
 #import <Realm/Realm.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ChameleonFramework/Chameleon.h>
 #import "UITableView+FDTemplateLayoutCell.h"
 #import <RETableViewManager/RETableViewManager.h>
 

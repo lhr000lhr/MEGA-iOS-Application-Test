@@ -38,6 +38,9 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - Kiwi (3.0.0)
@@ -71,6 +74,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.2)
   - AFNetworking-RACExtensions (~> 0.1.8)
   - BlocksKit
+  - ChameleonFramework
   - DZNEmptyDataSet
   - FDFullscreenPopGesture (~> 1.1)
   - Kiwi
@@ -90,6 +94,7 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AFNetworking-RACExtensions: a043c6b492fa892395ceb9d20bc4c94e96e08a57
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
@@ -106,6 +111,6 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: d308b42e2836bb29050058c6ce3b8db16fc43596
+PODFILE CHECKSUM: 570851bbf2607c1209babe4c47ad40ca91129a3d
 
 COCOAPODS: 1.4.0
