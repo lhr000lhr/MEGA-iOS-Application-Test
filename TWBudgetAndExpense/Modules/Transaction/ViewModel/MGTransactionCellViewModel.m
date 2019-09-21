@@ -26,7 +26,7 @@
 
 - (NSString *)detailText {
     
-    NSString *text = [NSString stringWithFormat:@"amount: %@ %0.4lf",
+    NSString *text = [NSString stringWithFormat:@"amount: %@ %0.2lf",
                                  [MGToolUtilities convertStringWithCurrencyType:self.transaction.currencyType],
                                  self.transaction.amount
                                  ];

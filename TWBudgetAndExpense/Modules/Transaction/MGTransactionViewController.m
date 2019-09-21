@@ -7,6 +7,7 @@
 //
 
 #import "MGTransactionViewController.h"
+#import "MGNumberItem.h"
 
 @interface MGTransactionViewController () <RETableViewManagerDelegate>
 
@@ -17,7 +18,7 @@
 
 @property (strong, nonatomic) REDateTimeItem *dateItem;
 @property (strong, nonatomic) REPickerItem *categoryItem;
-@property (strong, nonatomic) RETextItem *amountItem;
+@property (strong, nonatomic) MGNumberItem *amountItem;
 
 
 @end
@@ -32,11 +33,14 @@
 }
 
 - (void)configureWithTransaction:(MGTransaction *)transaction {
-    self.viewModel.transaction = transaction;
-    self.viewModel.amount = [NSString stringWithFormat:@"%lf",transaction.amount];
-    self.viewModel.currencyType = transaction.currencyType;
-    self.viewModel.createDate = transaction.createDate;
-    self.viewModel.selectedCategoryName = transaction.category.name;
+    self.viewModel = [[MGTransactionViewModel alloc] initWithTransaction:transaction];
+    @weakify(self);
+
+    [self.viewModel setDismissBlock:^{
+        @strongify(self)
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 #pragma mark - Configure Views
@@ -76,6 +80,8 @@
     });
     self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
 
+    self.manager[@"MGNumberItem"] = @"MGNumberTableViewCell";
+
     self.basicControlsSection = ({
         RETableViewSection *section = [RETableViewSection section];
         
@@ -111,7 +117,7 @@
     });
     
     self.amountItem = ({
-        RETextItem *item = [RETextItem itemWithTitle:@"Amount"];
+        MGNumberItem *item = [MGNumberItem itemWithTitle:@"Amount"];
         item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
         item.accessoryView = ({

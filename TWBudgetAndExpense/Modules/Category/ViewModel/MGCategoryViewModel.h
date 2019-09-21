@@ -23,7 +23,7 @@ typedef void(^ViewControllerDismissBlock)(void);
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *colorHex;
-@property (assign, nonatomic) double budget;
+@property (assign, nonatomic) NSString *budget;
 @property MGCurrencyType currencyType;
 
 

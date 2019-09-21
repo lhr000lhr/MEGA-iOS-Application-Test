@@ -31,7 +31,7 @@
     self = [self init];
     if (self) {
         self.category = category;
-        self.budget = category.budget;
+        self.budget = @(category.budget).stringValue;
         self.name = category.name;
         self.colorHex = category.colorHex;
         self.currencyType = category.currencyType;
@@ -65,7 +65,7 @@
                 newCategory.name = self.name;
                 newCategory.colorHex = self.colorHex;
                 newCategory.currencyType = self.currencyType;
-                newCategory.budget = self.budget;
+                newCategory.budget = self.budget.doubleValue;
                 
                 
                 [RLMRealm.defaultRealm beginWriteTransaction];
@@ -80,7 +80,7 @@
                     
                     self.category.name =  self.name;
                     self.category.colorHex = self.colorHex;
-                    self.category.budget = self.budget;
+                    self.category.budget = self.budget.doubleValue;
                     self.category.currencyType = self.currencyType;
 
                     
@@ -102,9 +102,10 @@
     
     RACSignal *nameSignal = RACObserve(self, name);
     RACSignal *colorSignal = RACObserve(self, colorHex);
+    RACSignal *budgetSignal = RACObserve(self, budget);
     
-    return [RACSignal combineLatest:@[nameSignal, colorSignal] reduce:^(NSString *name, NSString *color) {
-        BOOL result = name.length > 0 && color;
+    return [RACSignal combineLatest:@[nameSignal, colorSignal, budgetSignal] reduce:^(NSString *name, NSString *color, NSString *budget) {
+        BOOL result = name.length > 0 && color && budget.doubleValue > 0;
         
         return @(result);
     }];

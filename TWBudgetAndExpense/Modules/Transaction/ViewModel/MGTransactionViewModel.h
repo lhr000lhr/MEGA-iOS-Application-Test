@@ -30,6 +30,7 @@ typedef void(^ViewControllerDismissBlock)(void);
 
 - (NSArray *)categories;
 
+- (instancetype)initWithTransaction:(MGTransaction *)transaction;
 @end
 
 NS_ASSUME_NONNULL_END

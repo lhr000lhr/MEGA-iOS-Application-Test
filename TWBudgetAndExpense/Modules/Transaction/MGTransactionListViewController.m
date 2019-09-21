@@ -59,7 +59,6 @@ static NSString *cellIdentifier = @"cell";
 
 - (void)configureViews {
     
-    
     @weakify(self);
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];

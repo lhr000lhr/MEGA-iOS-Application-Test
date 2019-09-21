@@ -27,6 +27,23 @@
     return self;
 }
 
+- (instancetype)initWithTransaction:(MGTransaction *)transaction {
+    self = [self init];
+    if (self) {
+        
+        self.transaction = transaction;
+        self.amount = @(transaction.amount).stringValue;
+        self.currencyType = transaction.currencyType;
+        self.createDate = transaction.createDate;
+        self.selectedCategoryName = transaction.category.name;
+        
+    }
+    
+    
+    return self;
+}
+
+
 
 - (NSArray *)categories {
 

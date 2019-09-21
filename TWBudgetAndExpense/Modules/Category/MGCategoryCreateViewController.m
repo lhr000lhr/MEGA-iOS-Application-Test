@@ -10,6 +10,7 @@
 #import <MSColorPicker/MSColorPicker.h>
 #import "MGCategoryCreateViewModel.h"
 #import "MGCategoryViewModel.h"
+#import "MGNumberItem.h"
 
 @interface MGCategoryCreateViewController () <RETableViewManagerDelegate, MSColorSelectionViewControllerDelegate>
 
@@ -20,7 +21,7 @@
 
 @property (strong, nonatomic) RETextItem *nameItem;
 @property (strong, nonatomic) RETableViewItem *colorItem;
-@property (strong, nonatomic) RETextItem *budgetItem;
+@property (strong, nonatomic) MGNumberItem *budgetItem;
 
 @property (strong, nonatomic) MGCategoryViewModel *viewModel;
 
@@ -87,7 +88,9 @@
         tableView;
     });
     self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
-    
+
+    self.manager[@"MGNumberItem"] = @"MGNumberTableViewCell";
+
     self.basicControlsSection = ({
         RETableViewSection *section = [RETableViewSection section];
         
@@ -140,13 +143,11 @@
     });
     
     self.budgetItem = ({
-        RETextItem *item = [RETextItem itemWithTitle:@"Budget"];
+        MGNumberItem *item = [MGNumberItem itemWithTitle:@"Budget"];
         item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
-        item.value = [NSString stringWithFormat:@"%lf",self.viewModel.budget];
-        [item setOnChange:^(RETextItem *item) {
-            self.viewModel.budget = [item.value doubleValue];
-        }];
+        RACChannelTo(item, value) = RACChannelTo(self.viewModel, budget);
+
 
         item.accessoryView = ({
             UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
