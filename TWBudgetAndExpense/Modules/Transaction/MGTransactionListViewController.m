@@ -8,6 +8,11 @@
 
 #import "MGTransactionListViewController.h"
 #import "MGTransactionListViewModel.h"
+#import "MGToolUtilities.h"
+#import "MGTransactionCellViewModel.h"
+#import "MGTableViewCell.h"
+
+static NSString *cellIdentifier = @"cell";
 
 @interface MGTransactionListViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -67,6 +72,9 @@
         tableView;
     });
     
+//    [self.tableView registerClass:[MGTableViewCell class] forCellWithReuseIdentifier:cellIdentifier];
+
+    
     
     self.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(RLMNotification  _Nonnull notification, RLMRealm * _Nonnull realm) {
         [self.tableView reloadData];
@@ -88,18 +96,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
+    MGTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:@"kk"];
+        cell = [[MGTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:cellIdentifier];
     }
-    
-    MGTransaction *object = self.viewModel.result[indexPath.row];
-    cell.textLabel.text = object.category.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %@ %0.2lf", object.currencyType,object.amount];
-    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.colorHex] size:CGSizeMake(30, 30)];
-    
+    MGTransactionCellViewModel *viewModel = [[MGTransactionCellViewModel alloc] init];
+    viewModel.transaction = self.viewModel.result[indexPath.row];
+    viewModel.indexPath = indexPath;
+
+    [cell configureWithViewModel:viewModel];
+
     
     return cell;
 }

@@ -10,4 +10,11 @@
 
 @implementation MGExchangeRate
 
++ (NSDictionary *)defaultPropertyValues {
+    
+    return @{
+             @"rate": @(1.598389)
+             };
+}
+
 @end

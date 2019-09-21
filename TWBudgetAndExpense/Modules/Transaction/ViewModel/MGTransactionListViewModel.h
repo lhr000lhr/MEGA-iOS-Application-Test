@@ -8,12 +8,14 @@
 
 #import "RVMViewModel.h"
 #import "MGTransaction.h"
+#import "MGExchangeRate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MGTransactionListViewModel : RVMViewModel
 
 @property (strong, nonatomic) RLMResults *result;
+@property (strong, nonatomic) MGExchangeRate *exchangeRate;
 
 @end
 

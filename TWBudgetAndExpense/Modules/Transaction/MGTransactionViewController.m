@@ -121,9 +121,9 @@
         item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
         item.accessoryView = ({
-            UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
+            UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD", @"USD"]];
             RACChannelTo(segmentedControl, selectedSegmentIndex) = RACChannelTo(self.viewModel, currencyType);
-
+          
             segmentedControl;
         });
         RACChannelTo(item, value) = RACChannelTo(self.viewModel, amount);

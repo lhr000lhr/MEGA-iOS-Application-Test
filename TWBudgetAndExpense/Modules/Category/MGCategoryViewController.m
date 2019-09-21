@@ -8,6 +8,7 @@
 
 #import "MGCategoryViewController.h"
 #import "MGCategoryViewModel.h"
+#import "MGToolUtilities.h"
 
 @interface MGCategoryViewController () <RETableViewManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -37,7 +38,6 @@
     // Do any additional setup after loading the view.
     self.title = @"Category";
 
-//    [self.viewModel checkBudgetLabelSignal];
 }
 
 
@@ -53,7 +53,6 @@
             @strongify(self);
             
             UIViewController <MGCategoryCreateViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGCategoryCreateViewControllerProtocol)];
-//            [viewController configureWithViewModel:self.viewModel];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
             
             [self presentViewController:nav animated:YES completion:nil];
@@ -108,7 +107,7 @@
     cell.textLabel.text = object.name;
     cell.textLabel.textColor = object.textColor;
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"budget:%lf", object.budget];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"budget: %@ %0.2lf", [MGToolUtilities convertStringWithCurrencyType:object.currencyType], object.budget];
     cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex]
                                               size:CGSizeMake(30, 30)];
     

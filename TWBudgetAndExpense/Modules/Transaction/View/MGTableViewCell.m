@@ -7,6 +7,8 @@
 //
 
 #import "MGTableViewCell.h"
+#import "MGToolUtilities.h"
+#import "MGTransaction.h"
 
 @implementation MGTableViewCell
 
@@ -19,6 +21,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)configureWithViewModel:(MGTransactionCellViewModel *)viewModel {
+    
+    MGTransaction *transaction = viewModel.transaction;
+    self.textLabel.text = transaction.category.name;
+    
+    self.detailTextLabel.text = [NSString stringWithFormat:@"amount: %@ %0.2lf", [MGToolUtilities convertStringWithCurrencyType:transaction.currencyType], transaction.amount];
+    self.backgroundColor = [UIColor colorWithHexString:transaction.category.colorHex];
 }
 
 @end

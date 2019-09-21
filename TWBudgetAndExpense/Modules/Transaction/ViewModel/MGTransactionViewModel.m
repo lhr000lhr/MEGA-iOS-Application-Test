@@ -19,6 +19,15 @@
         if (!self.exchangeRate) {
             self.exchangeRate = [[MGExchangeRate alloc] init];
         }
+        @weakify(self);
+
+//        [RACObserve(self, currencyType) subscribeNext:^(NSNumber *type) {
+//            @strongify(self);
+//
+//           
+//            }
+//            
+//        }];
     }
     [self updateExchangeRate];
     return self;
@@ -106,7 +115,7 @@
     return _doneButtonCommand;
 }
 
-- (RACSignal*)checkFormSignal {
+- (RACSignal *)checkFormSignal {
     
     RACSignal *amountSignal = RACObserve(self, amount);
     RACSignal *categorySignal = RACObserve(self, selectedCategoryName);
