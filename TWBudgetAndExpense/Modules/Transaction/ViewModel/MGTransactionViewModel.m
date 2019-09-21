@@ -19,21 +19,13 @@
         if (!self.exchangeRate) {
             self.exchangeRate = [[MGExchangeRate alloc] init];
         }
+        self.createDate = [NSDate date];
         @weakify(self);
 
-//        [RACObserve(self, currencyType) subscribeNext:^(NSNumber *type) {
-//            @strongify(self);
-//
-//           
-//            }
-//            
-//        }];
     }
     [self updateExchangeRate];
     return self;
 }
-
-
 
 
 - (NSArray *)categories {
@@ -121,7 +113,7 @@
     RACSignal *categorySignal = RACObserve(self, selectedCategoryName);
     
     return [RACSignal combineLatest:@[amountSignal, categorySignal, RACObserve(self, createDate)] reduce:^(NSString *amount, NSString *selectedCategoryName, NSDate *createDate) {
-        BOOL result = amount.length > 0 && createDate && selectedCategoryName;
+        BOOL result = amount.doubleValue > 0 && createDate && selectedCategoryName;
         
         return @(result);
     }];

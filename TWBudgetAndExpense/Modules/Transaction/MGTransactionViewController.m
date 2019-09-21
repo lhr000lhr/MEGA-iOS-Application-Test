@@ -85,7 +85,7 @@
     
     
     self.dateItem = ({
-        REDateTimeItem *item = [REDateTimeItem itemWithTitle:@"Date" value:[NSDate date] placeholder:nil format:@"yyyy/MM/dd" datePickerMode:UIDatePickerModeDate];
+        REDateTimeItem *item = [REDateTimeItem itemWithTitle:@"Date" value:nil placeholder:nil format:@"yyyy-MM-dd HH:mm:ss" datePickerMode:UIDatePickerModeDate];
         RACChannelTo(item, value) = RACChannelTo(self.viewModel, createDate);
         [self.basicControlsSection addItem:item];
         item;
@@ -104,13 +104,7 @@
 
              self.viewModel.selectedCategoryName = selectedCategoryName;
          }];
-//        item.onChange = ^(REPickerItem *item){
-//            NSLog(@"Category name is: %@", item.value);
-//            NSString *selectedName = item.value.firstObject;
-//            RLMResults *results = [MGCategory objectsWhere:[NSString stringWithFormat:@"name = '%@'",selectedName]];
-//            NSLog(@"%@",results);
-//        };
-//        
+
         [self.basicControlsSection addItem:item];
       
         item;
