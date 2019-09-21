@@ -26,13 +26,13 @@
 
 - (NSString *)detailText {
     
-    NSString *text = [NSString stringWithFormat:@"amount: %@ %0.2lf",
+    NSString *text = [NSString stringWithFormat:@"amount: %@ %0.4lf",
                                  [MGToolUtilities convertStringWithCurrencyType:self.transaction.currencyType],
                                  self.transaction.amount
                                  ];
     
     if (self.transaction.currencyType == MGCurrencyTypeUSD) {
-        text = [NSString stringWithFormat:@"%@  NZD %0.2lf",text, self.exchangeAmount];
+        text = [NSString stringWithFormat:@"%@  NZD %0.4lf",text, self.exchangeAmount];
     }
     
     return text;

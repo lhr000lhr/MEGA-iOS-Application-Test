@@ -26,10 +26,15 @@
 - (void)configureWithViewModel:(MGTransactionCellViewModel *)viewModel {
     
     MGTransaction *transaction = viewModel.transaction;
+
+    UIColor *backgroundColor = [[UIColor colorWithHexString:transaction.category.colorHex] flatten];
+    UIColor *textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:backgroundColor isFlat:YES];
+
     self.textLabel.text = transaction.category.name;
-    
+    self.textLabel.textColor = textColor;
     self.detailTextLabel.text =  viewModel.detailText;
-    self.backgroundColor = [UIColor colorWithHexString:transaction.category.colorHex];
+    self.detailTextLabel.textColor = textColor;
+    self.backgroundColor = backgroundColor;
 }
 
 @end
