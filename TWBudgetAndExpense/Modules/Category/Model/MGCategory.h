@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 RLM_ARRAY_TYPE(MGTransaction)
 
 typedef NS_ENUM(NSInteger, MGCurrencyType) {
-    MGCurrencyTypeNZD = 1,
+    MGCurrencyTypeNZD,
     MGCurrencyTypeUSD,
  };
 

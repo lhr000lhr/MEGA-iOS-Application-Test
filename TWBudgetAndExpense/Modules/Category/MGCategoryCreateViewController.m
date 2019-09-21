@@ -150,7 +150,8 @@
 
         item.accessoryView = ({
             UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
-            segmentedControl.selectedSegmentIndex = 0;
+            RACChannelTo(segmentedControl, selectedSegmentIndex) = RACChannelTo(self.viewModel, currencyType);
+
             segmentedControl;
         });
         [self.basicControlsSection addItem:item];

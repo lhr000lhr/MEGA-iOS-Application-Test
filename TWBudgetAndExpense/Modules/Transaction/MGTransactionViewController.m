@@ -122,7 +122,8 @@
         item.placeholder = @"input here";
         item.accessoryView = ({
             UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"NZD",@"USD"]];
-            segmentedControl.selectedSegmentIndex = 0;
+            RACChannelTo(segmentedControl, selectedSegmentIndex) = RACChannelTo(self.viewModel, currencyType);
+
             segmentedControl;
         });
         RACChannelTo(item, value) = RACChannelTo(self.viewModel, amount);
