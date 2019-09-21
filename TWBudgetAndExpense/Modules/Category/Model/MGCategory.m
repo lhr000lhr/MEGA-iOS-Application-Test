@@ -10,10 +10,6 @@
 
 @implementation MGCategory
 
-//+ (NSString *)primaryKey {
-//    return @"name";
-//}
-
 + (NSDictionary *)linkingObjectsProperties {
     return @{
              @"transactions" : [RLMPropertyDescriptor descriptorWithClass:NSClassFromString(@"MGTransaction")
