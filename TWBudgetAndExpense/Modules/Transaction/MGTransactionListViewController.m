@@ -71,12 +71,9 @@ static NSString *cellIdentifier = @"cell";
         }];
         tableView;
     });
-    
-//    [self.tableView registerClass:[MGTableViewCell class] forCellWithReuseIdentifier:cellIdentifier];
 
-    
-    
     self.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(RLMNotification  _Nonnull notification, RLMRealm * _Nonnull realm) {
+        @strongify(self);
         [self.tableView reloadData];
     }];
     

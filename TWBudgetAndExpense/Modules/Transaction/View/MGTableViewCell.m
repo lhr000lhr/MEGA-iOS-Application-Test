@@ -28,7 +28,7 @@
     MGTransaction *transaction = viewModel.transaction;
     self.textLabel.text = transaction.category.name;
     
-    self.detailTextLabel.text = [NSString stringWithFormat:@"amount: %@ %0.2lf", [MGToolUtilities convertStringWithCurrencyType:transaction.currencyType], transaction.amount];
+    self.detailTextLabel.text =  viewModel.detailText;
     self.backgroundColor = [UIColor colorWithHexString:transaction.category.colorHex];
 }
 

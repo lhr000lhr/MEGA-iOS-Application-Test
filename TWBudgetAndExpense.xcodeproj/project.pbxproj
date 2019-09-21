@@ -14,7 +14,6 @@
 		4B324E4E23337B870067559A /* MGTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E4D23337B860067559A /* MGTransactionViewModel.m */; };
 		4B324E512333B7EF0067559A /* MGTransactionListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */; };
 		4B324E56233444280067559A /* MGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E54233444280067559A /* MGTableViewCell.m */; };
-		4B324E57233444280067559A /* MGTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B324E55233444280067559A /* MGTableViewCell.xib */; };
 		4B324E5A233448880067559A /* MGAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E59233448880067559A /* MGAPIManager.m */; };
 		4B809C9A2335C1330059C2CB /* MGCategoryViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B809C992335C1330059C2CB /* MGCategoryViewModelSpec.m */; };
 		4B809C9F2335EDC70059C2CB /* MGToolUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B809C9E2335EDC70059C2CB /* MGToolUtilities.m */; };
@@ -66,7 +65,6 @@
 		4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionListViewModel.m; sourceTree = "<group>"; };
 		4B324E53233444280067559A /* MGTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTableViewCell.h; sourceTree = "<group>"; };
 		4B324E54233444280067559A /* MGTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTableViewCell.m; sourceTree = "<group>"; };
-		4B324E55233444280067559A /* MGTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGTableViewCell.xib; sourceTree = "<group>"; };
 		4B324E58233448880067559A /* MGAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAPIManager.h; sourceTree = "<group>"; };
 		4B324E59233448880067559A /* MGAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAPIManager.m; sourceTree = "<group>"; };
 		4B809C992335C1330059C2CB /* MGCategoryViewModelSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewModelSpec.m; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			children = (
 				4B324E53233444280067559A /* MGTableViewCell.h */,
 				4B324E54233444280067559A /* MGTableViewCell.m */,
-				4B324E55233444280067559A /* MGTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,7 +481,6 @@
 				4BF86227233098EA00C0122F /* LaunchScreen.storyboard in Resources */,
 				4BF86224233098EA00C0122F /* Assets.xcassets in Resources */,
 				4BF86222233098EA00C0122F /* Main.storyboard in Resources */,
-				4B324E57233444280067559A /* MGTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
