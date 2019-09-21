@@ -97,7 +97,7 @@
     
     MGTransaction *object = self.viewModel.result[indexPath.row];
     cell.textLabel.text = object.category.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %0.2lf",object.amount];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount %@ %0.2lf", object.currencyType,object.amount];
     cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.category.colorHex] size:CGSizeMake(30, 30)];
     
     
