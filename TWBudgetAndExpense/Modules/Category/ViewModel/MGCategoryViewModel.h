@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^ViewControllerDismissBlock)(void);
 
-@interface MGCategoryViewModel : RVMViewModel <MGCategoryViewModelProtocol>
+@interface MGCategoryViewModel : RVMViewModel 
 
 
 @property (strong, nonatomic) MGCategory *category;

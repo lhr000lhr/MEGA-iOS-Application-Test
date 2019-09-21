@@ -16,6 +16,7 @@
 		4B324E56233444280067559A /* MGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E54233444280067559A /* MGTableViewCell.m */; };
 		4B324E57233444280067559A /* MGTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B324E55233444280067559A /* MGTableViewCell.xib */; };
 		4B324E5A233448880067559A /* MGAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E59233448880067559A /* MGAPIManager.m */; };
+		4B809C9A2335C1330059C2CB /* MGCategoryViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B809C992335C1330059C2CB /* MGCategoryViewModelSpec.m */; };
 		4B80F9D52330DC6F00E5172F /* MGTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */; };
 		4B80F9DA2330DFE400E5172F /* MGTransactionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9D92330DFE400E5172F /* MGTransactionModule.m */; };
 		4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F9DD2330E55600E5172F /* MGBaseViewController.m */; };
@@ -65,6 +66,7 @@
 		4B324E55233444280067559A /* MGTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGTableViewCell.xib; sourceTree = "<group>"; };
 		4B324E58233448880067559A /* MGAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAPIManager.h; sourceTree = "<group>"; };
 		4B324E59233448880067559A /* MGAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGAPIManager.m; sourceTree = "<group>"; };
+		4B809C992335C1330059C2CB /* MGCategoryViewModelSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewModelSpec.m; sourceTree = "<group>"; };
 		4B80F9D32330DC6F00E5172F /* MGTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGTransactionViewController.h; sourceTree = "<group>"; };
 		4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionViewController.m; sourceTree = "<group>"; };
 		4B80F9D72330DF8200E5172F /* MGProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGProtocols.h; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 				4B324E55233444280067559A /* MGTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4B809C982335C1000059C2CB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4B809C992335C1330059C2CB /* MGCategoryViewModelSpec.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		4B80F9D22330DC4000E5172F /* Transaction */ = {
@@ -329,6 +339,7 @@
 		4BF86232233098EB00C0122F /* TWBudgetAndExpenseTests */ = {
 			isa = PBXGroup;
 			children = (
+				4B809C982335C1000059C2CB /* Category */,
 				4BF86235233098EB00C0122F /* Info.plist */,
 				4BF86233233098EB00C0122F /* TWBudgetAndExpenseTests.m */,
 			);
@@ -609,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF86234233098EB00C0122F /* TWBudgetAndExpenseTests.m in Sources */,
+				4B809C9A2335C1330059C2CB /* MGCategoryViewModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
