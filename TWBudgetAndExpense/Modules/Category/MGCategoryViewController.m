@@ -108,7 +108,7 @@
     cell.textLabel.text = object.name;
     cell.textLabel.textColor = object.textColor;
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount:%lf", object.budget];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"budget:%lf", object.budget];
     cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex]
                                               size:CGSizeMake(30, 30)];
     
