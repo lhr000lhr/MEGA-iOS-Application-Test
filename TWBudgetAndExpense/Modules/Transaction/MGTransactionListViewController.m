@@ -68,10 +68,10 @@
     });
     
     
-    self.notification = [self.viewModel.result addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
-        @strongify(self);
+    self.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(RLMNotification  _Nonnull notification, RLMRealm * _Nonnull realm) {
         [self.tableView reloadData];
     }];
+    
     
     
 }
