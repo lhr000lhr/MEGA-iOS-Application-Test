@@ -38,7 +38,7 @@
 
 - (NSArray *)categories {
 
-    NSMutableArray *categories = @[].mutableCopy;
+    NSMutableArray *categories = @[@"none"].mutableCopy;
     RLMResults *result = [MGCategory allObjects];
     
     for (MGCategory *catogory in result) {

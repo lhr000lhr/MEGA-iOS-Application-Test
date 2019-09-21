@@ -27,7 +27,7 @@
     
     MGTransaction *transaction = viewModel.transaction;
 
-    UIColor *backgroundColor = [[UIColor colorWithHexString:transaction.category.colorHex] flatten];
+    UIColor *backgroundColor = transaction.category.colorHex ? [UIColor colorWithHexString:transaction.category.colorHex]  : [UIColor whiteColor];
     UIColor *textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:backgroundColor isFlat:YES];
 
     self.textLabel.text = transaction.category.name;

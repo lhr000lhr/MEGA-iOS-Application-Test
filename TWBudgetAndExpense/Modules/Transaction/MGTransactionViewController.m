@@ -93,7 +93,7 @@
     
     self.categoryItem = ({
         
-        NSArray *value = self.viewModel.selectedCategoryName ? @[self.viewModel.selectedCategoryName] : nil;
+        NSArray *value = self.viewModel.selectedCategoryName ? @[self.viewModel.selectedCategoryName] : @[@"none"];
         REPickerItem *item = [REPickerItem itemWithTitle:@"Category" value:value placeholder:nil options:@[[self.viewModel categories]]];
         [[RACSignal combineLatest:@[RACObserve(item, value)]
                            reduce:^id(NSArray *value){
