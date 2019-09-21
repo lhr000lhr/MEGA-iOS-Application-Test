@@ -29,6 +29,7 @@ typedef void(^ViewControllerDismissBlock)(void);
 
 - (RACSignal *)checkFormSignal;
 - (instancetype)initWithCategory:(MGCategory *)category;
+- (RACSignal *)checkBudgetLabelSignal;
 
 @end
 

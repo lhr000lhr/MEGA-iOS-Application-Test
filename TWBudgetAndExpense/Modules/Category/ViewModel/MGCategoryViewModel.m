@@ -7,6 +7,7 @@
 //
 
 #import "MGCategoryViewModel.h"
+#import "MGTransaction.h"
 
 @implementation MGCategoryViewModel
 
@@ -22,7 +23,6 @@
     self = [super init];
     if (self) {
     }
-    
     return self;
 }
 
@@ -98,7 +98,7 @@
     return _doneButtonCommand;
 }
 
-- (RACSignal*)checkFormSignal {
+- (RACSignal *)checkFormSignal {
     
     RACSignal *nameSignal = RACObserve(self, name);
     RACSignal *colorSignal = RACObserve(self, colorHex);
@@ -109,7 +109,5 @@
         return @(result);
     }];
 }
-
-
 
 @end

@@ -31,6 +31,9 @@ typedef NS_ENUM(NSInteger, MGCurrencyType) {
 
 @property (readonly) RLMLinkingObjects *transactions;
 
+- (RACSignal *)checkBudgetLabelSignal;
+- (UIColor *)textColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

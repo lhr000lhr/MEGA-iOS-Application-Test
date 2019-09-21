@@ -37,7 +37,7 @@
     // Do any additional setup after loading the view.
     self.title = @"Category";
 
-    
+//    [self.viewModel checkBudgetLabelSignal];
 }
 
 
@@ -79,8 +79,7 @@
     });
     
 
-    self.notification = [[MGCategory allObjects] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
-        @strongify(self);
+    self.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(RLMNotification  _Nonnull notification, RLMRealm * _Nonnull realm) {
         [self.tableView reloadData];
     }];
   
@@ -107,8 +106,11 @@
     
     MGCategory *object = self.viewModel.result[indexPath.row];
     cell.textLabel.text = object.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount:%.2lf",object.budget];
-    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex] size:CGSizeMake(30, 30)];
+    cell.textLabel.textColor = object.textColor;
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"amount:%lf", object.budget];
+    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex]
+                                              size:CGSizeMake(30, 30)];
     
     return cell;
 }
