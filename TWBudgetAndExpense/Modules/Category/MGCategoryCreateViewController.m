@@ -32,9 +32,6 @@
 
 - (void)viewDidLoad {
     
-    if (!self.viewModel) {
-        [self configureWithViewModel:[[MGCategoryViewModel alloc] init]];
-    }
     [super viewDidLoad];
     
     self.title = @"New Category";
@@ -43,14 +40,16 @@
 
 #pragma mark - Configure Views
 
-- (void)configureWithViewModel:(id<MGCategoryViewModelProtocol>)viewModel {
-    self.viewModel = viewModel;
+- (void)configureWithCategory:(MGCategory *)category {
+    self.viewModel = [[MGCategoryViewModel alloc] initWithCategory:category];
     @weakify(self)
     [self.viewModel setDismissBlock:^{
         @strongify(self)
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
+
+
 
 - (void)configureNavigationItem {
     
@@ -99,15 +98,15 @@
     self.nameItem = ({
         RETextItem *item = [RETextItem itemWithTitle:@"Name"];
         item.placeholder = @"input here";
-        RACChannelTo(item, value) = RACChannelTo(self.viewModel.category, name);
+        RACChannelTo(item, value) = RACChannelTo(self.viewModel, name);
         [self.basicControlsSection addItem:item];
         item;
     });
     
     self.colorItem = ({
         RETableViewItem *item = [RETableViewItem itemWithTitle:@"Colour"];
-        UIColor *categoryColor = [UIColor redColor];
-        self.viewModel.category.colorHex = [UIColor redColor].hexString;
+        UIColor *categoryColor = self.viewModel.colorHex ? [UIColor colorWithHexString:self.viewModel.colorHex] : [UIColor redColor];
+        
         [item setImage:[UIImage imageWithColor:categoryColor size:CGSizeMake(30, 30)]];
         [item setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         
@@ -123,7 +122,7 @@
             [[self rac_signalForSelector:@selector(colorViewController:didChangeColor:) fromProtocol:@protocol(MSColorSelectionViewControllerDelegate)] subscribeNext:^(RACTuple *tuple) {
                 MSColorSelectionViewController *vc = tuple.first;
                 [item setImage:[UIImage imageWithColor:vc.color size:CGSizeMake(30, 30)]];
-                self.viewModel.category.colorHex = [vc.color hexString];
+                self.viewModel.colorHex = [vc.color hexString];
                 [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
             }];
             
@@ -144,8 +143,9 @@
         RETextItem *item = [RETextItem itemWithTitle:@"Budget"];
         item.keyboardType = UIKeyboardTypeDecimalPad;
         item.placeholder = @"input here";
+        item.value = [NSString stringWithFormat:@"%lf",self.viewModel.budget];
         [item setOnChange:^(RETextItem *item) {
-            self.viewModel.category.budget = [item.value doubleValue];
+            self.viewModel.budget = [item.value doubleValue];
         }];
 
         item.accessoryView = ({
@@ -160,5 +160,21 @@
 
 #pragma mark - method
 
+
+#pragma mark - getters
+
+- (MGCategoryViewModel *)viewModel {
+    @weakify(self);
+    
+    if (!_viewModel) {
+        _viewModel = [[MGCategoryViewModel alloc] init];
+        [_viewModel setDismissBlock:^{
+            @strongify(self)
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
+    return _viewModel;
+}
 
 @end

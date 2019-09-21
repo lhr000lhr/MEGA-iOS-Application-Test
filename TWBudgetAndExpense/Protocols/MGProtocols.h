@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSignal, MGCategoryParent, MGTransaction;
+@class RACSignal, MGCategoryParent, MGTransaction, MGCategory;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MGCategoryViewModelProtocol <NSObject>
+
+- (instancetype)initWithCategory:(MGCategory *)category;
 @property (strong, nonatomic) MGCategoryParent *parent;
 
 @end
@@ -25,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol MGCategoryCreateViewControllerProtocol <NSObject>
-- (void)configureWithViewModel:(id<MGCategoryViewModelProtocol>)viewModel;
+- (void)configureWithCategory:(MGCategory *)category;
 
 @end
 

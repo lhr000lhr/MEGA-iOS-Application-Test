@@ -40,6 +40,8 @@
     
 }
 
+
+
 #pragma mark - Configure Views
 
 - (void)configureNavigationItem {
@@ -95,8 +97,7 @@
     return self.viewModel.result.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
     
     if (!cell) {
@@ -119,6 +120,19 @@
         [realm deleteObject:self.viewModel.result[indexPath.row]];
         [realm commitWriteTransaction];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    MGCategory *transaction = self.viewModel.result[indexPath.row];
+    
+    UIViewController <MGCategoryCreateViewControllerProtocol> *viewController = [[JSObjection defaultInjector] getObject:@protocol(MGCategoryCreateViewControllerProtocol)];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [viewController configureWithCategory:transaction];
+
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 

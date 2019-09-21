@@ -15,12 +15,20 @@ typedef void(^ViewControllerDismissBlock)(void);
 
 @interface MGCategoryViewModel : RVMViewModel <MGCategoryViewModelProtocol>
 
-@property (strong, nonatomic) MGCategoryParent *parent;
+
 @property (strong, nonatomic) MGCategory *category;
 @property (strong, nonatomic) RACCommand *doneButtonCommand;
 @property (copy, nonatomic) ViewControllerDismissBlock dismissBlock;
 @property (strong, nonatomic) RLMResults *result;
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *colorHex;
+@property (assign, nonatomic) double budget;
+@property MGCurrencyType currencyType;
+
+
 - (RACSignal *)checkFormSignal;
+- (instancetype)initWithCategory:(MGCategory *)category;
 
 @end
 

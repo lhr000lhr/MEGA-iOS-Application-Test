@@ -10,9 +10,9 @@
 
 @implementation MGCategory
 
-+ (NSString *)primaryKey {
-    return @"name";
-}
+//+ (NSString *)primaryKey {
+//    return @"name";
+//}
 
 + (NSDictionary *)linkingObjectsProperties {
     return @{

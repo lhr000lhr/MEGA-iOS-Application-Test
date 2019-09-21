@@ -10,18 +10,12 @@
 
 @implementation MGCategoryViewModel
 
+
 - (RLMResults *)result {
     if (!_result) {
         _result = [MGCategory allObjects];
     }
     return _result;
-}
-
-- (MGCategory *)category {
-    if (!_category) {
-        _category = [[MGCategory alloc] init];
-    }
-    return _category;
 }
 
 - (instancetype)init {
@@ -30,6 +24,29 @@
     }
     
     return self;
+}
+
+- (instancetype)initWithCategory:(MGCategory *)category {
+    
+    self = [self init];
+    if (self) {
+        self.category = category;
+        self.budget = category.budget;
+        self.name = category.name;
+        self.colorHex = category.colorHex;
+        self.currencyType = category.currencyType;
+    }
+    
+    return self;
+}
+
+#pragma mark - getters
+
+- (NSString *)colorHex {
+    if (!_colorHex) {
+        _colorHex = [UIColor redColor].hexString;
+    }
+    return _colorHex;
 }
 
 - (RACCommand *)doneButtonCommand {
@@ -42,21 +59,35 @@
 
             self.active = YES;
 
-            // (1) Create a Dog object and then set its properties
-           
-            MGCategory *newCategory = [[MGCategory alloc] init];
-            newCategory.name = self.category.name;
-            newCategory.colorHex = self.category.colorHex;
-            newCategory.currencyType = self.category.currencyType;
-            newCategory.budget = self.category.budget;
-            
-            
-            [RLMRealm.defaultRealm beginWriteTransaction];
-           
-            [RLMRealm.defaultRealm addObject:newCategory];
-            
-            [RLMRealm.defaultRealm commitWriteTransaction];
-            
+            // (1) Create a MGCategory object and then set its properties
+            if (!self.category) {
+                MGCategory *newCategory = [[MGCategory alloc] init];
+                newCategory.name = self.name;
+                newCategory.colorHex = self.colorHex;
+                newCategory.currencyType = self.currencyType;
+                newCategory.budget = self.budget;
+                
+                
+                [RLMRealm.defaultRealm beginWriteTransaction];
+                
+                [RLMRealm.defaultRealm addObject:newCategory];
+                
+                [RLMRealm.defaultRealm commitWriteTransaction];
+                
+            } else {
+                
+                [[RLMRealm defaultRealm] transactionWithBlock:^{
+                    
+                    self.category.name =  self.name;
+                    self.category.colorHex = self.colorHex;
+                    self.category.budget = self.budget;
+                    self.category.currencyType = self.currencyType;
+
+                    
+                }];
+                
+            }
+       
             self.dismissBlock();
             
             
@@ -69,8 +100,8 @@
 
 - (RACSignal*)checkFormSignal {
     
-    RACSignal *nameSignal = RACObserve(self.category, name);
-    RACSignal *colorSignal = RACObserve(self.category, colorHex);
+    RACSignal *nameSignal = RACObserve(self, name);
+    RACSignal *colorSignal = RACObserve(self, colorHex);
     
     return [RACSignal combineLatest:@[nameSignal, colorSignal] reduce:^(NSString *name, NSString *color) {
         BOOL result = name.length > 0 && color;
@@ -78,6 +109,7 @@
         return @(result);
     }];
 }
+
 
 
 @end
