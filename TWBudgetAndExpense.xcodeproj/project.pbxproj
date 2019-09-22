@@ -35,6 +35,9 @@
 		4BE291F4233650520013A6D6 /* MGNumberItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291F3233650520013A6D6 /* MGNumberItem.m */; };
 		4BE291F8233737E50013A6D6 /* MGCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */; };
 		4BE291FB233738440013A6D6 /* MGCategoryCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */; };
+		4BE29203233761CA0013A6D6 /* MGExchangeRateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */; };
+		4BE29204233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE29202233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib */; };
+		4BE29207233774B30013A6D6 /* MGExchangeRateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */; };
 		4BF86219233098EA00C0122F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF86218233098EA00C0122F /* AppDelegate.m */; };
 		4BF86222233098EA00C0122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86220233098EA00C0122F /* Main.storyboard */; };
 		4BF86224233098EA00C0122F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86223233098EA00C0122F /* Assets.xcassets */; };
@@ -102,8 +105,8 @@
 		4BB335C62330B266002B3713 /* MGCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryViewController.h; sourceTree = "<group>"; };
 		4BB335C72330B266002B3713 /* MGCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewController.m; sourceTree = "<group>"; };
 		4BB335C92330CBC8002B3713 /* TWBudgetAndExpense-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TWBudgetAndExpense-Prefix.pch"; sourceTree = "<group>"; };
-		4BCC87A62334747A00FF4D86 /* MGExchangeRateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MGExchangeRateModel.h; path = MGExchangeRateModel.h; sourceTree = "<group>"; };
-		4BCC87A72334747A00FF4D86 /* MGExchangeRateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MGExchangeRateModel.m; path = MGExchangeRateModel.m; sourceTree = "<group>"; };
+		4BCC87A62334747A00FF4D86 /* MGExchangeRateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRateModel.h; sourceTree = "<group>"; };
+		4BCC87A72334747A00FF4D86 /* MGExchangeRateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateModel.m; sourceTree = "<group>"; };
 		4BCC87AA23348A0400FF4D86 /* MGExchangeRate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRate.h; sourceTree = "<group>"; };
 		4BCC87AB23348A0400FF4D86 /* MGExchangeRate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRate.m; sourceTree = "<group>"; };
 		4BE291F2233650520013A6D6 /* MGNumberItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGNumberItem.h; sourceTree = "<group>"; };
@@ -112,6 +115,11 @@
 		4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryTableViewCell.m; sourceTree = "<group>"; };
 		4BE291F9233738440013A6D6 /* MGCategoryCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryCellViewModel.h; sourceTree = "<group>"; };
 		4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryCellViewModel.m; sourceTree = "<group>"; };
+		4BE29200233761CA0013A6D6 /* MGExchangeRateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRateTableViewCell.h; sourceTree = "<group>"; };
+		4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateTableViewCell.m; sourceTree = "<group>"; };
+		4BE29202233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGExchangeRateTableViewCell.xib; sourceTree = "<group>"; };
+		4BE29205233774B30013A6D6 /* MGExchangeRateItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRateItem.h; sourceTree = "<group>"; };
+		4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateItem.m; sourceTree = "<group>"; };
 		4BF86214233098EA00C0122F /* TWBudgetAndExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBudgetAndExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF86217233098EA00C0122F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BF86218233098EA00C0122F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -317,6 +325,7 @@
 		4BB335BC2330B191002B3713 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				4BE291FC2337617B0013A6D6 /* View */,
 				4BCC87A92334899300FF4D86 /* ViewModel */,
 				4BB335B92330B13D002B3713 /* MGChartsViewController.h */,
 				4BB335BA2330B13D002B3713 /* MGChartsViewController.m */,
@@ -352,6 +361,8 @@
 			children = (
 				4BE291F2233650520013A6D6 /* MGNumberItem.h */,
 				4BE291F3233650520013A6D6 /* MGNumberItem.m */,
+				4BE29205233774B30013A6D6 /* MGExchangeRateItem.h */,
+				4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -361,6 +372,16 @@
 			children = (
 				4BE291F6233737E50013A6D6 /* MGCategoryTableViewCell.h */,
 				4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BE291FC2337617B0013A6D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BE29200233761CA0013A6D6 /* MGExchangeRateTableViewCell.h */,
+				4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */,
+				4BE29202233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,6 +537,7 @@
 			files = (
 				4BF86227233098EA00C0122F /* LaunchScreen.storyboard in Resources */,
 				4BF86224233098EA00C0122F /* Assets.xcassets in Resources */,
+				4BE29204233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib in Resources */,
 				4BF86222233098EA00C0122F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,8 +698,10 @@
 				4BCC87A82334747A00FF4D86 /* MGExchangeRateModel.m in Sources */,
 				4B324E3E23322BF10067559A /* MGCategoryViewModel.m in Sources */,
 				4B80F9EC2331E80D00E5172F /* MGCategory.m in Sources */,
+				4BE29207233774B30013A6D6 /* MGExchangeRateItem.m in Sources */,
 				4B80F9DA2330DFE400E5172F /* MGTransactionModule.m in Sources */,
 				4B324E512333B7EF0067559A /* MGTransactionListViewModel.m in Sources */,
+				4BE29203233761CA0013A6D6 /* MGExchangeRateTableViewCell.m in Sources */,
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
 				4B324E4A233378EB0067559A /* MGTransaction.m in Sources */,
 				4BCC87AC23348A0400FF4D86 /* MGExchangeRate.m in Sources */,

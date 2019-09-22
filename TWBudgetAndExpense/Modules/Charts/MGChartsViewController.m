@@ -9,11 +9,15 @@
 #import "MGChartsViewController.h"
 #import "MGAPIManager.h"
 #import "MGExchangeRateModel.h"
-#import "MGExchangeRate.h"
+#import "MGExchangeRateItem.h"
 
-@interface MGChartsViewController ()
+@interface MGChartsViewController () <RETableViewManagerDelegate>
 
-@property (strong, nonatomic) MGExchangeRate *exchangeRate;
+@property (nonatomic, strong) UITableView *tableView;
+@property (strong, nonatomic) RETableViewManager *manager;
+@property (strong, nonatomic) RETableViewSection *basicControlsSection;
+
+@property (strong, nonatomic) MGExchangeRateItem *exchangeRateItem;
 
 @end
 
@@ -49,6 +53,40 @@
     
 - (void)configureViews {
     
+    [super configureViews];
+    @weakify(self);
+    
+    self.tableView = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        
+        [self.view addSubview:tableView];
+        [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+        tableView;
+    });
+    self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
+    
+    self.manager[@"MGExchangeRateItem"] = @"MGExchangeRateTableViewCell";
+    
+    self.basicControlsSection = ({
+        RETableViewSection *section = [RETableViewSection section];
+        section.headerTitle = @"Exchange Rate";
+        [self.manager addSection:section];
+        section;
+    });
+    
+    self.exchangeRateItem = ({
+        
+        MGExchangeRateItem *item = [MGExchangeRateItem item];
+        [item setSelectionHandler:^(MGExchangeRateItem *item) {
+            [item deselectRowAnimated:YES];
+        }];
+        
+        [self.basicControlsSection addItem:item];
+        item;
+        
+    });
     
 
 

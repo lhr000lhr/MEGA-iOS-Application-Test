@@ -17,11 +17,7 @@
 
 - (double)exchangeAmount {
     
-    MGExchangeRate *exchangeRate = [[MGExchangeRate allObjects] lastObject];
-    if (!exchangeRate) {
-        exchangeRate = [[MGExchangeRate alloc] init];
-    }
-    return exchangeRate.rate * self.transaction.amount;
+    return [MGToolUtilities convertUSDToNZD:self.transaction.amount];
 }
 
 - (NSString *)detailText {
