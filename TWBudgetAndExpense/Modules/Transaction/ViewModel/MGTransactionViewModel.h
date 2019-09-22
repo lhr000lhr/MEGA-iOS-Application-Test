@@ -19,7 +19,6 @@ typedef void(^ViewControllerDismissBlock)(void);
 @property (strong, nonatomic) MGTransaction *transaction;
 @property (strong, nonatomic) NSString *selectedCategoryName;
 @property (strong, nonatomic) NSDate *createDate;
-@property (strong, nonatomic) NSDate *transactionDate;
 @property (strong, nonatomic) NSString *amount;
 @property (assign, nonatomic) MGCurrencyType currencyType;
 //@property (strong, nonatomic) RLMResults *result;
@@ -28,7 +27,7 @@ typedef void(^ViewControllerDismissBlock)(void);
 @property (copy, nonatomic) ViewControllerDismissBlock dismissBlock;
 
 - (NSArray *)categories;
-
+- (RACSignal *)checkFormSignal;
 - (instancetype)initWithTransaction:(MGTransaction *)transaction;
 @end
 

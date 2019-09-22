@@ -8,7 +8,6 @@
 
 #import "MGTransactionViewModel.h"
 #import "MGAPIManager.h"
-#import "MGExchangeRateModel.h"
 
 @implementation MGTransactionViewModel
 

@@ -37,6 +37,7 @@
 		4BE291FB233738440013A6D6 /* MGCategoryCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */; };
 		4BE29203233761CA0013A6D6 /* MGExchangeRateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */; };
 		4BE29207233774B30013A6D6 /* MGExchangeRateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */; };
+		4BE2920A23377D790013A6D6 /* MGTransactionViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE2920923377D790013A6D6 /* MGTransactionViewModelSpec.m */; };
 		4BF86219233098EA00C0122F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF86218233098EA00C0122F /* AppDelegate.m */; };
 		4BF86222233098EA00C0122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86220233098EA00C0122F /* Main.storyboard */; };
 		4BF86224233098EA00C0122F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86223233098EA00C0122F /* Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateTableViewCell.m; sourceTree = "<group>"; };
 		4BE29205233774B30013A6D6 /* MGExchangeRateItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRateItem.h; sourceTree = "<group>"; };
 		4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateItem.m; sourceTree = "<group>"; };
+		4BE2920923377D790013A6D6 /* MGTransactionViewModelSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGTransactionViewModelSpec.m; sourceTree = "<group>"; };
 		4BF86214233098EA00C0122F /* TWBudgetAndExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBudgetAndExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF86217233098EA00C0122F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BF86218233098EA00C0122F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -383,6 +385,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4BE2920823377D570013A6D6 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				4BE2920923377D790013A6D6 /* MGTransactionViewModelSpec.m */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
 		4BF8620B233098EA00C0122F = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +436,7 @@
 		4BF86232233098EB00C0122F /* TWBudgetAndExpenseTests */ = {
 			isa = PBXGroup;
 			children = (
+				4BE2920823377D570013A6D6 /* Transaction */,
 				4B809C982335C1000059C2CB /* Category */,
 				4B809CA02335EEA60059C2CB /* Tools */,
 				4BF86235233098EB00C0122F /* Info.plist */,
@@ -714,6 +725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE2920A23377D790013A6D6 /* MGTransactionViewModelSpec.m in Sources */,
 				4BF86234233098EB00C0122F /* TWBudgetAndExpenseTests.m in Sources */,
 				4B809C9A2335C1330059C2CB /* MGCategoryViewModelSpec.m in Sources */,
 				4B809CA22335EECB0059C2CB /* MGToolUtilitiesSpec.m in Sources */,
