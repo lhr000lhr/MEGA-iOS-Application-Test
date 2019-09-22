@@ -119,7 +119,7 @@
             MSColorSelectionViewController *colorSelectionController = [[MSColorSelectionViewController alloc] init];
             UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:colorSelectionController];
            
-            colorSelectionController.color = categoryColor;
+            colorSelectionController.color = [UIColor colorWithHexString:self.viewModel.colorHex];
             colorSelectionController.delegate = self;
            
             [[self rac_signalForSelector:@selector(colorViewController:didChangeColor:) fromProtocol:@protocol(MSColorSelectionViewControllerDelegate)] subscribeNext:^(RACTuple *tuple) {
