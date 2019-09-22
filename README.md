@@ -17,6 +17,13 @@ git clone https://github.com/lhr000lhr/MEGA-iOS-Application-Test.git
 cd MEGA-iOS-Application-Test/
 pod install
 ```
+## Screenshots
+
+| Chart      | Transaction| Category |
+| ---------- | ---------- |----------|
+| ![Chart][1] | ![Transaction][2] |![Category][3]
+
+
 ---
 ### Directory
 
@@ -44,3 +51,13 @@ pod install
 └── Protocols
 
 ```
+
+
+#### License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+ 
+
+
+[1]: ./screenshots/Chart.png
+[2]: ./screenshots/Transaction.png
+[3]: ./screenshots/Category.png
