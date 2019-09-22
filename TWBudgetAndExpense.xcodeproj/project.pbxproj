@@ -36,7 +36,6 @@
 		4BE291F8233737E50013A6D6 /* MGCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */; };
 		4BE291FB233738440013A6D6 /* MGCategoryCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */; };
 		4BE29203233761CA0013A6D6 /* MGExchangeRateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */; };
-		4BE29204233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE29202233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib */; };
 		4BE29207233774B30013A6D6 /* MGExchangeRateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */; };
 		4BF86219233098EA00C0122F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF86218233098EA00C0122F /* AppDelegate.m */; };
 		4BF86222233098EA00C0122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86220233098EA00C0122F /* Main.storyboard */; };
@@ -117,7 +116,6 @@
 		4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryCellViewModel.m; sourceTree = "<group>"; };
 		4BE29200233761CA0013A6D6 /* MGExchangeRateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRateTableViewCell.h; sourceTree = "<group>"; };
 		4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateTableViewCell.m; sourceTree = "<group>"; };
-		4BE29202233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGExchangeRateTableViewCell.xib; sourceTree = "<group>"; };
 		4BE29205233774B30013A6D6 /* MGExchangeRateItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRateItem.h; sourceTree = "<group>"; };
 		4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRateItem.m; sourceTree = "<group>"; };
 		4BF86214233098EA00C0122F /* TWBudgetAndExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBudgetAndExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,7 +379,6 @@
 			children = (
 				4BE29200233761CA0013A6D6 /* MGExchangeRateTableViewCell.h */,
 				4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */,
-				4BE29202233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,7 +534,6 @@
 			files = (
 				4BF86227233098EA00C0122F /* LaunchScreen.storyboard in Resources */,
 				4BF86224233098EA00C0122F /* Assets.xcassets in Resources */,
-				4BE29204233761CA0013A6D6 /* MGExchangeRateTableViewCell.xib in Resources */,
 				4BF86222233098EA00C0122F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

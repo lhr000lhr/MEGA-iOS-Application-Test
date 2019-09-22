@@ -27,6 +27,7 @@
     self.USDLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.text = @"USD🇺🇸: $ 1";
+        label.textAlignment = NSTextAlignmentRight;
         [self.contentView addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).mas_offset(16);
@@ -41,6 +42,7 @@
     self.NZDLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.text = [NSString stringWithFormat:@"NZD🇳🇿: $ %.4lf", [MGExchangeRate sharedExchangeRate].rate];
+        label.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_centerX).mas_offset(16);
