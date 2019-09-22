@@ -102,8 +102,8 @@
 		4BB335C62330B266002B3713 /* MGCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryViewController.h; sourceTree = "<group>"; };
 		4BB335C72330B266002B3713 /* MGCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewController.m; sourceTree = "<group>"; };
 		4BB335C92330CBC8002B3713 /* TWBudgetAndExpense-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TWBudgetAndExpense-Prefix.pch"; sourceTree = "<group>"; };
-		4BCC87A62334747A00FF4D86 /* MGExchangeRateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MGExchangeRateModel.h; path = TWBudgetAndExpense/API/MGExchangeRateModel.h; sourceTree = SOURCE_ROOT; };
-		4BCC87A72334747A00FF4D86 /* MGExchangeRateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MGExchangeRateModel.m; path = TWBudgetAndExpense/API/MGExchangeRateModel.m; sourceTree = SOURCE_ROOT; };
+		4BCC87A62334747A00FF4D86 /* MGExchangeRateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MGExchangeRateModel.h; path = MGExchangeRateModel.h; sourceTree = "<group>"; };
+		4BCC87A72334747A00FF4D86 /* MGExchangeRateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MGExchangeRateModel.m; path = MGExchangeRateModel.m; sourceTree = "<group>"; };
 		4BCC87AA23348A0400FF4D86 /* MGExchangeRate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExchangeRate.h; sourceTree = "<group>"; };
 		4BCC87AB23348A0400FF4D86 /* MGExchangeRate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRate.m; sourceTree = "<group>"; };
 		4BE291F2233650520013A6D6 /* MGNumberItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGNumberItem.h; sourceTree = "<group>"; };
@@ -170,12 +170,12 @@
 		4B324E402332378F0067559A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4BE291F9233738440013A6D6 /* MGCategoryCellViewModel.h */,
+				4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */,
 				4B324E412332454C0067559A /* MGCategoryCreateViewModel.h */,
 				4B324E422332454C0067559A /* MGCategoryCreateViewModel.m */,
 				4B324E3C23322BF10067559A /* MGCategoryViewModel.h */,
 				4B324E3D23322BF10067559A /* MGCategoryViewModel.m */,
-				4BE291F9233738440013A6D6 /* MGCategoryCellViewModel.h */,
-				4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,10 +183,10 @@
 		4B324E47233378C30067559A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B324E48233378EB0067559A /* MGTransaction.h */,
-				4B324E49233378EB0067559A /* MGTransaction.m */,
 				4BCC87AA23348A0400FF4D86 /* MGExchangeRate.h */,
 				4BCC87AB23348A0400FF4D86 /* MGExchangeRate.m */,
+				4B324E48233378EB0067559A /* MGTransaction.h */,
+				4B324E49233378EB0067559A /* MGTransaction.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,12 +194,12 @@
 		4B324E4B23337A4D0067559A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4B324E4C23337B860067559A /* MGTransactionViewModel.h */,
-				4B324E4D23337B860067559A /* MGTransactionViewModel.m */,
-				4B324E4F2333B7EF0067559A /* MGTransactionListViewModel.h */,
-				4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */,
 				4B809CA32336230F0059C2CB /* MGTransactionCellViewModel.h */,
 				4B809CA42336230F0059C2CB /* MGTransactionCellViewModel.m */,
+				4B324E4F2333B7EF0067559A /* MGTransactionListViewModel.h */,
+				4B324E502333B7EF0067559A /* MGTransactionListViewModel.m */,
+				4B324E4C23337B860067559A /* MGTransactionViewModel.h */,
+				4B324E4D23337B860067559A /* MGTransactionViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,10 +207,10 @@
 		4B324E52233443DE0067559A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B324E53233444280067559A /* MGTableViewCell.h */,
-				4B324E54233444280067559A /* MGTableViewCell.m */,
 				4B809CA623364D7B0059C2CB /* MGNumberTableViewCell.h */,
 				4B809CA723364D7B0059C2CB /* MGNumberTableViewCell.m */,
+				4B324E53233444280067559A /* MGTableViewCell.h */,
+				4B324E54233444280067559A /* MGTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,15 +251,15 @@
 		4B80F9D22330DC4000E5172F /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				4B324E52233443DE0067559A /* View */,
 				4B324E47233378C30067559A /* Model */,
+				4B324E52233443DE0067559A /* View */,
 				4B324E4B23337A4D0067559A /* ViewModel */,
+				4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */,
+				4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */,
 				4B80F9D82330DFE400E5172F /* MGTransactionModule.h */,
 				4B80F9D92330DFE400E5172F /* MGTransactionModule.m */,
 				4B80F9D32330DC6F00E5172F /* MGTransactionViewController.h */,
 				4B80F9D42330DC6F00E5172F /* MGTransactionViewController.m */,
-				4BB335C22330B23B002B3713 /* MGTransactionListViewController.h */,
-				4BB335C32330B23B002B3713 /* MGTransactionListViewController.m */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -327,8 +327,8 @@
 		4BB335C52330B256002B3713 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				4BE291F5233737CF0013A6D6 /* View */,
 				4B324E3F233237840067559A /* Model */,
+				4BE291F5233737CF0013A6D6 /* View */,
 				4B324E402332378F0067559A /* ViewModel */,
 				4B80F9E32331121500E5172F /* MGCategoryCreateViewController.h */,
 				4B80F9E42331121500E5172F /* MGCategoryCreateViewController.m */,
@@ -388,9 +388,9 @@
 		4BF86216233098EA00C0122F /* TWBudgetAndExpense */ = {
 			isa = PBXGroup;
 			children = (
-				4BE291F12336503C0013A6D6 /* Items */,
-				4B809C9B2335ED740059C2CB /* Addtions */,
 				4BB335B62330AF45002B3713 /* API */,
+				4B809C9B2335ED740059C2CB /* Addtions */,
+				4BE291F12336503C0013A6D6 /* Items */,
 				4BB335B82330B135002B3713 /* Modules */,
 				4B80F9D62330DF6900E5172F /* Protocols */,
 				4BF86217233098EA00C0122F /* AppDelegate.h */,
@@ -408,8 +408,8 @@
 		4BF86232233098EB00C0122F /* TWBudgetAndExpenseTests */ = {
 			isa = PBXGroup;
 			children = (
-				4B809CA02335EEA60059C2CB /* Tools */,
 				4B809C982335C1000059C2CB /* Category */,
+				4B809CA02335EEA60059C2CB /* Tools */,
 				4BF86235233098EB00C0122F /* Info.plist */,
 				4BF86233233098EB00C0122F /* TWBudgetAndExpenseTests.m */,
 			);
