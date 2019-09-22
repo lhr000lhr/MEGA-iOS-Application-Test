@@ -10,20 +10,20 @@
 
 @implementation MGTransaction
 
-//+ (NSDictionary *)linkingObjectsProperties {
-//    return @{
-//             @"category" : [RLMPropertyDescriptor descriptorWithClass:NSClassFromString(@"MGCategory")
-//                                                         propertyName:@"transactions"]
-//             };
-//}
+- (double)calculatedAmount {
+    
+    switch (self.currencyType) {
+        case MGCurrencyTypeNZD:
+            return self.amount;
+            break;
+            
+            case MGCurrencyTypeUSD:
+            return [MGToolUtilities convertUSDToNZD:self.amount];
+        default:
+            return self.amount;
 
-//+ (NSString *)primaryKey {
-//    return @"createDate";
-//}
+            break;
+    }
+}
 
-//+ (NSDictionary *)defaultPropertyValues {
-//    return @{
-//             @"createDate" : [NSDate date],
-//             };
-//}
 @end

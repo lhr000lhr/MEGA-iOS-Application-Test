@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property MGCurrencyType currencyType;
 @property MGCategory *category;
 
+- (double)calculatedAmount;
+
 @end
 
 NS_ASSUME_NONNULL_END

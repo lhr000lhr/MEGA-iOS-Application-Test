@@ -9,7 +9,7 @@
 #import "RLMObject.h"
 
 
-@class MGTransaction;
+@class MGTransaction, RLMLinkingObjects;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, MGCurrencyType) {
 
 - (RACSignal *)checkBudgetLabelSignal;
 - (UIColor *)textColor;
-
+- (double)calculatedBudget;
 @end
 
 NS_ASSUME_NONNULL_END

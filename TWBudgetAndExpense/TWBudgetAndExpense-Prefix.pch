@@ -18,6 +18,7 @@
 #import <Foundation/Foundation.h>
 #import "MGProtocols.h"
 #import "MGExchangeRate.h"
+#import "MGToolUtilities.h"
 
 //开源库
 #import "YYKit.h"
