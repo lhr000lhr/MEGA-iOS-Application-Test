@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		141B1ADA5744132185771CC0 /* libPods-TWBudgetAndExpenseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16236056C437822A3A4DB8 /* libPods-TWBudgetAndExpenseTests.a */; };
+		4B2A3BC623378A3E00DC4496 /* MGExpenseChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A3BC523378A3E00DC4496 /* MGExpenseChartItem.m */; };
+		4B2A3BC923378ABB00DC4496 /* MGExpenseChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A3BC823378ABB00DC4496 /* MGExpenseChartTableViewCell.m */; };
 		4B324E3E23322BF10067559A /* MGCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E3D23322BF10067559A /* MGCategoryViewModel.m */; };
 		4B324E432332454C0067559A /* MGCategoryCreateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E422332454C0067559A /* MGCategoryCreateViewModel.m */; };
 		4B324E4A233378EB0067559A /* MGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E49233378EB0067559A /* MGTransaction.m */; };
@@ -60,6 +62,10 @@
 /* Begin PBXFileReference section */
 		21946A45E132717D92514B67 /* Pods-TWBudgetAndExpense.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWBudgetAndExpense.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWBudgetAndExpense/Pods-TWBudgetAndExpense.debug.xcconfig"; sourceTree = "<group>"; };
 		3571E1AC59CBB9B4C6B438B7 /* libPods-TWBudgetAndExpense.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TWBudgetAndExpense.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2A3BC423378A3E00DC4496 /* MGExpenseChartItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExpenseChartItem.h; sourceTree = "<group>"; };
+		4B2A3BC523378A3E00DC4496 /* MGExpenseChartItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExpenseChartItem.m; sourceTree = "<group>"; };
+		4B2A3BC723378ABB00DC4496 /* MGExpenseChartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExpenseChartTableViewCell.h; sourceTree = "<group>"; };
+		4B2A3BC823378ABB00DC4496 /* MGExpenseChartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExpenseChartTableViewCell.m; sourceTree = "<group>"; };
 		4B324E3C23322BF10067559A /* MGCategoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryViewModel.h; sourceTree = "<group>"; };
 		4B324E3D23322BF10067559A /* MGCategoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewModel.m; sourceTree = "<group>"; };
 		4B324E412332454C0067559A /* MGCategoryCreateViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryCreateViewModel.h; sourceTree = "<group>"; };
@@ -363,6 +369,8 @@
 				4BE291F3233650520013A6D6 /* MGNumberItem.m */,
 				4BE29205233774B30013A6D6 /* MGExchangeRateItem.h */,
 				4BE29206233774B30013A6D6 /* MGExchangeRateItem.m */,
+				4B2A3BC423378A3E00DC4496 /* MGExpenseChartItem.h */,
+				4B2A3BC523378A3E00DC4496 /* MGExpenseChartItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -381,6 +389,8 @@
 			children = (
 				4BE29200233761CA0013A6D6 /* MGExchangeRateTableViewCell.h */,
 				4BE29201233761CA0013A6D6 /* MGExchangeRateTableViewCell.m */,
+				4B2A3BC723378ABB00DC4496 /* MGExpenseChartTableViewCell.h */,
+				4B2A3BC823378ABB00DC4496 /* MGExpenseChartTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -705,6 +715,7 @@
 				4BCC87A82334747A00FF4D86 /* MGExchangeRateModel.m in Sources */,
 				4B324E3E23322BF10067559A /* MGCategoryViewModel.m in Sources */,
 				4B80F9EC2331E80D00E5172F /* MGCategory.m in Sources */,
+				4B2A3BC623378A3E00DC4496 /* MGExpenseChartItem.m in Sources */,
 				4BE29207233774B30013A6D6 /* MGExchangeRateItem.m in Sources */,
 				4B80F9DA2330DFE400E5172F /* MGTransactionModule.m in Sources */,
 				4B324E512333B7EF0067559A /* MGTransactionListViewModel.m in Sources */,
@@ -712,6 +723,7 @@
 				4BF8622A233098EA00C0122F /* main.m in Sources */,
 				4B324E4A233378EB0067559A /* MGTransaction.m in Sources */,
 				4BCC87AC23348A0400FF4D86 /* MGExchangeRate.m in Sources */,
+				4B2A3BC923378ABB00DC4496 /* MGExpenseChartTableViewCell.m in Sources */,
 				4B809CA823364D7B0059C2CB /* MGNumberTableViewCell.m in Sources */,
 				4B324E4E23337B870067559A /* MGTransactionViewModel.m in Sources */,
 				4B80F9E82331129800E5172F /* MGCategoryModule.m in Sources */,

@@ -9,6 +9,7 @@ target 'TWBudgetAndExpense' do
   pod 'YYKit'
   pod 'Realm'
   pod 'Masonry'
+  pod 'PNChart'
   pod 'BlocksKit'
   pod 'Objection', '~> 0.9'
   pod 'MSColorPicker'

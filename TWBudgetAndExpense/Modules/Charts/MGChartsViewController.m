@@ -8,14 +8,16 @@
 
 #import "MGChartsViewController.h"
 #import "MGAPIManager.h"
-#import "MGExchangeRateModel.h"
+
 #import "MGExchangeRateItem.h"
+#import "MGExpenseChartItem.h"
 
 @interface MGChartsViewController () <RETableViewManagerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (strong, nonatomic) RETableViewManager *manager;
 @property (strong, nonatomic) RETableViewSection *basicControlsSection;
+@property (strong, nonatomic) RETableViewSection *expenseControlsSection;
 
 @property (strong, nonatomic) MGExchangeRateItem *exchangeRateItem;
 
@@ -68,7 +70,8 @@
     self.manager = [[RETableViewManager alloc] initWithTableView:self.tableView delegate:self];
     
     self.manager[@"MGExchangeRateItem"] = @"MGExchangeRateTableViewCell";
-    
+    self.manager[@"MGExpenseChartItem"] = @"MGExpenseChartTableViewCell";
+
     self.basicControlsSection = ({
         RETableViewSection *section = [RETableViewSection section];
         section.headerTitle = @"Exchange Rate";
@@ -88,7 +91,21 @@
         
     });
     
+    
+    self.expenseControlsSection = ({
+        RETableViewSection *section = [RETableViewSection section];
+        section.headerTitle = @"Expense Chart";
+        [self.manager addSection:section];
+        
+        
+        [section addItem:({
+            MGExpenseChartItem *item = [MGExpenseChartItem item];
 
+            item;
+        })];
+        section;
+        
+    });
 
 
 

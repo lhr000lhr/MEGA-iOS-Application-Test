@@ -47,6 +47,8 @@ PODS:
   - Masonry (1.1.0)
   - MSColorPicker (1.0.1)
   - Objection (0.16.0)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -64,6 +66,7 @@ PODS:
     - REFormattedNumberField (~> 1.1.5)
     - REValidation (~> 0.1.4)
   - REValidation (0.1.4)
+  - UICountingLabel (1.2.0)
   - UINavigationItem+Loading (1.1)
   - UITableView+FDTemplateLayoutCell (1.6)
   - YYKit (1.0.9):
@@ -81,6 +84,7 @@ DEPENDENCIES:
   - Masonry
   - MSColorPicker
   - Objection (~> 0.9)
+  - PNChart
   - ReactiveCocoa (= 2.5)
   - ReactiveViewModel (~> 0.1)
   - Realm
@@ -101,16 +105,18 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MSColorPicker: 90b8663b99d6c5c3ba10ccfaa4a600b844f8738e
   Objection: 7445392399fb3082acec36a231dca7c14637c1ac
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   REFormattedNumberField: 70fc5fb1218ebd5ee9983820defd12806d5c6ec6
   RETableViewManager: 0f24d796c42c0890d38c79cc9aeb3871e186726e
   REValidation: 38c4de1be58455f8b00aab208ac80db316a66b7f
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   UINavigationItem+Loading: e61d7963495d8a19b6d3825d867ed60db9b218b6
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 570851bbf2607c1209babe4c47ad40ca91129a3d
+PODFILE CHECKSUM: 21000533f7fc18b76e7b7e5e12031651286c4c9d
 
 COCOAPODS: 1.4.0
