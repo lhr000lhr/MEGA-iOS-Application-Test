@@ -10,6 +10,7 @@
 		141B1ADA5744132185771CC0 /* libPods-TWBudgetAndExpenseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B16236056C437822A3A4DB8 /* libPods-TWBudgetAndExpenseTests.a */; };
 		4B2A3BC623378A3E00DC4496 /* MGExpenseChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A3BC523378A3E00DC4496 /* MGExpenseChartItem.m */; };
 		4B2A3BC923378ABB00DC4496 /* MGExpenseChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A3BC823378ABB00DC4496 /* MGExpenseChartTableViewCell.m */; };
+		4B2A3BCC23378E9E00DC4496 /* MGExpenseChartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A3BCB23378E9E00DC4496 /* MGExpenseChartViewModel.m */; };
 		4B324E3E23322BF10067559A /* MGCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E3D23322BF10067559A /* MGCategoryViewModel.m */; };
 		4B324E432332454C0067559A /* MGCategoryCreateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E422332454C0067559A /* MGCategoryCreateViewModel.m */; };
 		4B324E4A233378EB0067559A /* MGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B324E49233378EB0067559A /* MGTransaction.m */; };
@@ -66,6 +67,8 @@
 		4B2A3BC523378A3E00DC4496 /* MGExpenseChartItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExpenseChartItem.m; sourceTree = "<group>"; };
 		4B2A3BC723378ABB00DC4496 /* MGExpenseChartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGExpenseChartTableViewCell.h; sourceTree = "<group>"; };
 		4B2A3BC823378ABB00DC4496 /* MGExpenseChartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExpenseChartTableViewCell.m; sourceTree = "<group>"; };
+		4B2A3BCA23378E9E00DC4496 /* MGExpenseChartViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MGExpenseChartViewModel.h; path = TWBudgetAndExpense/Modules/Charts/View/MGExpenseChartViewModel.h; sourceTree = SOURCE_ROOT; };
+		4B2A3BCB23378E9E00DC4496 /* MGExpenseChartViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MGExpenseChartViewModel.m; path = TWBudgetAndExpense/Modules/Charts/View/MGExpenseChartViewModel.m; sourceTree = SOURCE_ROOT; };
 		4B324E3C23322BF10067559A /* MGCategoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryViewModel.h; sourceTree = "<group>"; };
 		4B324E3D23322BF10067559A /* MGCategoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryViewModel.m; sourceTree = "<group>"; };
 		4B324E412332454C0067559A /* MGCategoryCreateViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryCreateViewModel.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 		4BCC87A92334899300FF4D86 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B2A3BCA23378E9E00DC4496 /* MGExpenseChartViewModel.h */,
+				4B2A3BCB23378E9E00DC4496 /* MGExpenseChartViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -729,6 +734,7 @@
 				4B80F9E82331129800E5172F /* MGCategoryModule.m in Sources */,
 				4BB335BB2330B13D002B3713 /* MGChartsViewController.m in Sources */,
 				4BB335C82330B266002B3713 /* MGCategoryViewController.m in Sources */,
+				4B2A3BCC23378E9E00DC4496 /* MGExpenseChartViewModel.m in Sources */,
 				4B80F9DE2330E55600E5172F /* MGBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

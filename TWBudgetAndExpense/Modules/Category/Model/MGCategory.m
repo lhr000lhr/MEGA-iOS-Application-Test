@@ -34,18 +34,21 @@
     }
 }
 
+- (double)calculatedAmount {
+    
+    CGFloat amount = 0;
+
+    for (MGTransaction *transaction in self.transactions) {
+        amount = amount + transaction.calculatedAmount;
+    }
+    return amount;
+}
 
 - (UIColor *)textColor {
     
     UIColor *textColor = [UIColor blackColor];
     
-    CGFloat amount = 0;
-    
-    for (MGTransaction *transaction in self.transactions) {
-        amount = amount + transaction.calculatedAmount;
-    }
-    
-    if (self.calculatedBudget <= amount) {
+    if (self.calculatedBudget <= self.calculatedAmount) {
         textColor = [UIColor redColor];
     }
     

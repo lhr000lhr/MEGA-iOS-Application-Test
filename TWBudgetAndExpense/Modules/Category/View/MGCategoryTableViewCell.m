@@ -36,14 +36,6 @@
     self.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:category.colorHex]
                                               size:CGSizeMake(30, 30)];
     
-//    UIColor *backgroundColor = transaction.category.colorHex ? [UIColor colorWithHexString:transaction.category.colorHex]  : [UIColor whiteColor];
-//    UIColor *textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:backgroundColor isFlat:YES];
-//
-//    self.textLabel.text = transaction.category.name;
-//    self.textLabel.textColor = textColor;
-//    self.detailTextLabel.text =  viewModel.detailText;
-//    self.detailTextLabel.textColor = textColor;
-//    self.backgroundColor = backgroundColor;
 }
 
 

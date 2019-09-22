@@ -39,5 +39,7 @@
 
 #endif
 
+#define kDefaultCategoryColorflatGray        [UIColor flatGrayColor]
+
 
 #endif /* TWBudgetAndExpense_pch */

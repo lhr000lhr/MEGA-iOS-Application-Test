@@ -21,6 +21,8 @@
 
 @property (strong, nonatomic) MGExchangeRateItem *exchangeRateItem;
 
+@property (nonatomic, strong) RLMNotificationToken *notification;
+
 @end
 
 @implementation MGChartsViewController
@@ -58,6 +60,11 @@
     [super configureViews];
     @weakify(self);
     
+    self.notification = [[RLMRealm defaultRealm] addNotificationBlock:^(RLMNotification  _Nonnull notification, RLMRealm * _Nonnull realm) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+    
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         
@@ -75,6 +82,7 @@
     self.basicControlsSection = ({
         RETableViewSection *section = [RETableViewSection section];
         section.headerTitle = @"Exchange Rate";
+        section.footerTitle = [NSString stringWithFormat:@"UPDATE AT %@", [[MGExchangeRate sharedExchangeRate].updateDate stringWithFormat:@" yyyy-MM-dd HH:mm:ss"]];
         [self.manager addSection:section];
         section;
     });
@@ -100,7 +108,9 @@
         
         [section addItem:({
             MGExpenseChartItem *item = [MGExpenseChartItem item];
-
+            [item setSelectionHandler:^(MGExpenseChartItem *item) {
+                [item deselectRowAnimated:YES];
+            }];
             item;
         })];
         section;

@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, MGCurrencyType) {
 - (RACSignal *)checkBudgetLabelSignal;
 - (UIColor *)textColor;
 - (double)calculatedBudget;
+- (double)calculatedAmount;
+
 @end
 
 NS_ASSUME_NONNULL_END

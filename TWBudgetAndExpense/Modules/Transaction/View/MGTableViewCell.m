@@ -27,10 +27,10 @@
     
     MGTransaction *transaction = viewModel.transaction;
 
-    UIColor *backgroundColor = transaction.category.colorHex ? [UIColor colorWithHexString:transaction.category.colorHex]  : [UIColor whiteColor];
+    UIColor *backgroundColor = transaction.category.colorHex ? [UIColor colorWithHexString:transaction.category.colorHex]  : kDefaultCategoryColorflatGray;
     UIColor *textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:backgroundColor isFlat:YES];
 
-    self.textLabel.text = transaction.category.name;
+    self.textLabel.text = transaction.category.name ? transaction.category.name : @"other";
     self.textLabel.textColor = textColor;
     self.detailTextLabel.text =  viewModel.detailText;
     self.detailTextLabel.textColor = textColor;

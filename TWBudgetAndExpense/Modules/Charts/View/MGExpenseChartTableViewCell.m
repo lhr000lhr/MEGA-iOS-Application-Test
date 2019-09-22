@@ -8,6 +8,18 @@
 //
 
 #import "MGExpenseChartTableViewCell.h"
+#import "MGExpenseChartViewModel.h"
+#import "PNChart.h"
+#import "MGCategory.h"
+#import "MGTransaction.h"
+
+@interface MGExpenseChartTableViewCell ()
+
+@property (strong, nonatomic) PNPieChart *pieChart;
+@property (strong, nonatomic) MGExpenseChartViewModel *viewModel;
+
+@end
+
 
 @implementation MGExpenseChartTableViewCell
 
@@ -25,12 +37,18 @@
 
 - (void)cellDidLoad {
     [super cellDidLoad];
+
+    NSMutableArray *items = @[].mutableCopy;
     
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:10 color:PNLightGreen],
-                       [PNPieChartDataItem dataItemWithValue:20 color:PNFreshGreen description:@"WWDC"],
-                       [PNPieChartDataItem dataItemWithValue:40 color:PNDeepGreen description:@"GOOG I/O"],
-                       ];
-    
+    for (MGCategory *category in self.viewModel.result) {
+        [items addObject:({
+            [PNPieChartDataItem dataItemWithValue:category.calculatedBudget
+                                            color:[UIColor colorWithHexString:category.colorHex]
+                                      description:category.name
+             ];
+        })];
+    }
+ 
     self.pieChart = ({
         PNPieChart *chart = [[PNPieChart alloc] initWithFrame:CGRectZero items:items];
         [self.contentView addSubview:chart];
@@ -45,10 +63,8 @@
     self.pieChart.descriptionTextColor = [UIColor whiteColor];
     self.pieChart.descriptionTextFont = [UIFont fontWithName:@"Avenir-Medium" size:11.0];
     self.pieChart.descriptionTextShadowColor = [UIColor clearColor];
-    self.pieChart.showAbsoluteValues = NO;
     self.pieChart.showOnlyValues = NO;
-    
-    
+    self.pieChart.showAbsoluteValues = NO;
     [self.pieChart strokeChart];
 
 }
@@ -56,8 +72,50 @@
 
 - (void)cellWillAppear {
     [super cellWillAppear];
-
+    NSMutableArray *items = @[].mutableCopy;
     
+    for (MGCategory *category in self.viewModel.result) {
+        [items addObject:({
+            [PNPieChartDataItem dataItemWithValue:category.calculatedAmount
+                                            color:[UIColor colorWithHexString:category.colorHex]
+                                      description:category.name
+             ];
+        })];
+    }
+    
+    // category of none
+    
+    RLMResults *result = [MGTransaction objectsWhere:@"category == nil"];
+    
+    double amount = 0;
+    for (MGTransaction *transaction in result) {
+        amount = amount + transaction.calculatedAmount;
+    }
+    if (amount > 0) {
+        [items addObject:({
+            [PNPieChartDataItem dataItemWithValue:amount
+                                            color:kDefaultCategoryColorflatGray
+                                      description:@"other"
+             ];
+        })];
+        
+    }
+    
+    self.pieChart.hidden = items.count <= 0;
+
+    [self.pieChart updateChartData:items];
+    [self.pieChart strokeChart];
+
+}
+
+#pragma mark - getters
+
+- (MGExpenseChartViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[MGExpenseChartViewModel alloc] init];
+        
+    }
+    return _viewModel;
 }
 
 

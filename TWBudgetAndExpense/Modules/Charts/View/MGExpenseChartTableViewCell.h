@@ -7,13 +7,11 @@
 //
 
 #import "RETableViewCell.h"
-#import "PNChart.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MGExpenseChartTableViewCell : RETableViewCell
 
-@property (strong, nonatomic) PNPieChart *pieChart;
 
 @end
 
