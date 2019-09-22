@@ -33,7 +33,7 @@
         <scene sceneID="jzy-pg-e2Z">
             <objects>
                 <navigationController title="Chart" id="nDp-MV-Yb3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chart" id="TO3-PT-iOe"/>
+                    <tabBarItem key="tabBarItem" title="Chart" image="barchart" id="TO3-PT-iOe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dx1-Jk-YAh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,7 +66,7 @@
         <scene sceneID="qdt-J6-9cy">
             <objects>
                 <navigationController id="QxF-Yq-lfo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transaction" id="6Zu-IQ-gGy"/>
+                    <tabBarItem key="tabBarItem" title="Transaction" image="transaction" id="6Zu-IQ-gGy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ar5-eR-tXY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,7 +83,7 @@
         <scene sceneID="64J-Jf-GqB">
             <objects>
                 <navigationController id="WgW-n2-hCY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Category" id="ns7-iS-0J1"/>
+                    <tabBarItem key="tabBarItem" title="Category" image="category" id="ns7-iS-0J1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ny-Kw-zGb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,4 +129,9 @@
             <point key="canvasLocation" x="632" y="767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="barchart" width="24" height="24"/>
+        <image name="category" width="24" height="24"/>
+        <image name="transaction" width="24" height="24"/>
+    </resources>
 </document>
