@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property double rate;
 
++ (instancetype)sharedExchangeRate;
+
 @end
 
 NS_ASSUME_NONNULL_END

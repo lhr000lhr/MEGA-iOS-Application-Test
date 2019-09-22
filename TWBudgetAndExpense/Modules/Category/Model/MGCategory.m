@@ -19,6 +19,7 @@
 }
 
 
+
 - (UIColor *)textColor {
     
     UIColor *textColor = [UIColor blackColor];

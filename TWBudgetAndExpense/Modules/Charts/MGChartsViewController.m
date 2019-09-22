@@ -9,8 +9,11 @@
 #import "MGChartsViewController.h"
 #import "MGAPIManager.h"
 #import "MGExchangeRateModel.h"
+#import "MGExchangeRate.h"
 
 @interface MGChartsViewController ()
+
+@property (strong, nonatomic) MGExchangeRate *exchangeRate;
 
 @end
 
@@ -20,13 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Chart";
-    [[[MGAPIManager sharedManager] fetchExchangeRate] subscribeNext:^(MGExchangeRateModel *rateModel) {
- 
-
-
-    }];
 
 }
+
 
 #pragma mark - Configure Views
 
@@ -56,5 +55,9 @@
 
 
 }
+
+
+
+#pragma mark - getters
 
 @end

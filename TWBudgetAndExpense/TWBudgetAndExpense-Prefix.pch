@@ -17,6 +17,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "MGProtocols.h"
+#import "MGExchangeRate.h"
 
 //开源库
 #import "YYKit.h"

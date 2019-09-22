@@ -25,11 +25,11 @@
 - (RACSignal *)fetchExchangeRate {
  
     NSDictionary *param = @{
-                            @"access_key" : @"a8cb6d6c2bfb188ab8b1efd7d2afe6b6",
+                            @"access_key" : @"b7ca81d0723947d06b7b07d0d31914c6",
                             @"currencies" : @"NZD",
                             @"source" : @"USD"
                             };
-    return [[self rac_GET:@"/api/live" parameters:param] map:^id(RACTuple *tuple) {
+    return [[[self rac_GET:@"/api/live" parameters:param] replayLazily] map:^id(RACTuple *tuple) {
         NSDictionary *response = tuple.first;
         return [MGExchangeRateModel modelWithDictionary:response];
 

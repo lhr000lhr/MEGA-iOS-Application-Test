@@ -23,4 +23,9 @@
     }
 }
 
++ (double)convertUSDToNZD:(double)USD {
+  
+    return USD * [MGExchangeRate sharedExchangeRate].rate;
+}
+
 @end

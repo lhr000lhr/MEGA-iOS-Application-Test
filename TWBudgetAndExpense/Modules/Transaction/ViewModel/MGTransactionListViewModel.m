@@ -16,28 +16,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.exchangeRate = [[MGExchangeRate allObjects] lastObject];
-        if (!self.exchangeRate) {
-            self.exchangeRate = [[MGExchangeRate alloc] init];
-        }
-        
+    
     }
-    [self updateExchangeRate];
 
     return self;
 }
 
-
-- (void)updateExchangeRate {
-    [[[MGAPIManager sharedManager] fetchExchangeRate] subscribeNext:^(MGExchangeRateModel *rateModel) {
-        
-        [RLMRealm.defaultRealm beginWriteTransaction];
-        self.exchangeRate.rate = [rateModel.quotes doubleValueForKey:@"USDNZD" default:1];
-        [RLMRealm.defaultRealm commitWriteTransaction];
-        NSLog(@"current rate is %lf",self.exchangeRate.rate);
-        
-    }];
-}
 
 
 - (RLMResults *)result {

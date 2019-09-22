@@ -33,6 +33,8 @@
 		4BCC87A82334747A00FF4D86 /* MGExchangeRateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC87A72334747A00FF4D86 /* MGExchangeRateModel.m */; };
 		4BCC87AC23348A0400FF4D86 /* MGExchangeRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC87AB23348A0400FF4D86 /* MGExchangeRate.m */; };
 		4BE291F4233650520013A6D6 /* MGNumberItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291F3233650520013A6D6 /* MGNumberItem.m */; };
+		4BE291F8233737E50013A6D6 /* MGCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */; };
+		4BE291FB233738440013A6D6 /* MGCategoryCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */; };
 		4BF86219233098EA00C0122F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF86218233098EA00C0122F /* AppDelegate.m */; };
 		4BF86222233098EA00C0122F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86220233098EA00C0122F /* Main.storyboard */; };
 		4BF86224233098EA00C0122F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF86223233098EA00C0122F /* Assets.xcassets */; };
@@ -106,6 +108,10 @@
 		4BCC87AB23348A0400FF4D86 /* MGExchangeRate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGExchangeRate.m; sourceTree = "<group>"; };
 		4BE291F2233650520013A6D6 /* MGNumberItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGNumberItem.h; sourceTree = "<group>"; };
 		4BE291F3233650520013A6D6 /* MGNumberItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGNumberItem.m; sourceTree = "<group>"; };
+		4BE291F6233737E50013A6D6 /* MGCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryTableViewCell.h; sourceTree = "<group>"; };
+		4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryTableViewCell.m; sourceTree = "<group>"; };
+		4BE291F9233738440013A6D6 /* MGCategoryCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGCategoryCellViewModel.h; sourceTree = "<group>"; };
+		4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGCategoryCellViewModel.m; sourceTree = "<group>"; };
 		4BF86214233098EA00C0122F /* TWBudgetAndExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWBudgetAndExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF86217233098EA00C0122F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BF86218233098EA00C0122F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -168,6 +174,8 @@
 				4B324E422332454C0067559A /* MGCategoryCreateViewModel.m */,
 				4B324E3C23322BF10067559A /* MGCategoryViewModel.h */,
 				4B324E3D23322BF10067559A /* MGCategoryViewModel.m */,
+				4BE291F9233738440013A6D6 /* MGCategoryCellViewModel.h */,
+				4BE291FA233738440013A6D6 /* MGCategoryCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 		4BB335C52330B256002B3713 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4BE291F5233737CF0013A6D6 /* View */,
 				4B324E3F233237840067559A /* Model */,
 				4B324E402332378F0067559A /* ViewModel */,
 				4B80F9E32331121500E5172F /* MGCategoryCreateViewController.h */,
@@ -345,6 +354,15 @@
 				4BE291F3233650520013A6D6 /* MGNumberItem.m */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		4BE291F5233737CF0013A6D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BE291F6233737E50013A6D6 /* MGCategoryTableViewCell.h */,
+				4BE291F7233737E50013A6D6 /* MGCategoryTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4BF8620B233098EA00C0122F = {
@@ -646,9 +664,11 @@
 				4B80F9E12330E78F00E5172F /* MGBaseTableViewController.m in Sources */,
 				4B324E5A233448880067559A /* MGAPIManager.m in Sources */,
 				4BB335C42330B23B002B3713 /* MGTransactionListViewController.m in Sources */,
+				4BE291FB233738440013A6D6 /* MGCategoryCellViewModel.m in Sources */,
 				4B809C9F2335EDC70059C2CB /* MGToolUtilities.m in Sources */,
 				4B80F9D52330DC6F00E5172F /* MGTransactionViewController.m in Sources */,
 				4B809CA52336230F0059C2CB /* MGTransactionCellViewModel.m in Sources */,
+				4BE291F8233737E50013A6D6 /* MGCategoryTableViewCell.m in Sources */,
 				4BF86219233098EA00C0122F /* AppDelegate.m in Sources */,
 				4BE291F4233650520013A6D6 /* MGNumberItem.m in Sources */,
 				4B324E56233444280067559A /* MGTableViewCell.m in Sources */,

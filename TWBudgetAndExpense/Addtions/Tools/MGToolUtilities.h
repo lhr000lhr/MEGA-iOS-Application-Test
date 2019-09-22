@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)convertStringWithCurrencyType:(MGCurrencyType)type;
 
++ (double)convertUSDToNZD:(double)USD;
+
 @end
 
 NS_ASSUME_NONNULL_END

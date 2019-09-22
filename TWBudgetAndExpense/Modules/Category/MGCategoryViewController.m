@@ -9,6 +9,10 @@
 #import "MGCategoryViewController.h"
 #import "MGCategoryViewModel.h"
 #import "MGToolUtilities.h"
+#import "MGCategoryTableViewCell.h"
+#import "MGCategoryCellViewModel.h"
+
+static NSString *cellIdentifier = @"categoryCell";
 
 @interface MGCategoryViewController () <RETableViewManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -96,20 +100,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"kk"];
+    MGCategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:@"kk"];
+        cell = [[MGCategoryTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:cellIdentifier];
     }
     
-    MGCategory *object = self.viewModel.result[indexPath.row];
-    cell.textLabel.text = object.name;
-    cell.textLabel.textColor = object.textColor;
+    MGCategory *category = self.viewModel.result[indexPath.row];
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"budget: %@ %0.2lf", [MGToolUtilities convertStringWithCurrencyType:object.currencyType], object.budget];
-    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex]
-                                              size:CGSizeMake(30, 30)];
+    MGCategoryCellViewModel *viewModel = [[MGCategoryCellViewModel alloc] init];
+    viewModel.category = category;
+    [cell configureWithViewModel:viewModel];
+    
+//    cell.textLabel.text = object.name;
+//    cell.textLabel.textColor = object.textColor;
+//
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"budget: %@ %0.2lf", [MGToolUtilities convertStringWithCurrencyType:object.currencyType], object.budget];
+//    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex]
+//                                              size:CGSizeMake(30, 30)];
     
     return cell;
 }
