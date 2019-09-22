@@ -112,14 +112,7 @@ static NSString *cellIdentifier = @"categoryCell";
     MGCategoryCellViewModel *viewModel = [[MGCategoryCellViewModel alloc] init];
     viewModel.category = category;
     [cell configureWithViewModel:viewModel];
-    
-//    cell.textLabel.text = object.name;
-//    cell.textLabel.textColor = object.textColor;
-//
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"budget: %@ %0.2lf", [MGToolUtilities convertStringWithCurrencyType:object.currencyType], object.budget];
-//    cell.imageView.image = [UIImage imageWithColor:[UIColor colorWithHexString:object.colorHex]
-//                                              size:CGSizeMake(30, 30)];
-    
+
     return cell;
 }
 

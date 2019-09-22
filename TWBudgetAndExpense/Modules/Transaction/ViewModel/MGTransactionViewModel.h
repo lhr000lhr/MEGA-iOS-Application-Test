@@ -21,7 +21,6 @@ typedef void(^ViewControllerDismissBlock)(void);
 @property (strong, nonatomic) NSDate *createDate;
 @property (strong, nonatomic) NSString *amount;
 @property (assign, nonatomic) MGCurrencyType currencyType;
-//@property (strong, nonatomic) RLMResults *result;
 
 @property (strong, nonatomic) RACCommand *doneButtonCommand;
 @property (copy, nonatomic) ViewControllerDismissBlock dismissBlock;

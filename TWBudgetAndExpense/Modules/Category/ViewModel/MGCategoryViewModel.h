@@ -24,7 +24,7 @@ typedef void(^ViewControllerDismissBlock)(void);
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *colorHex;
 @property (assign, nonatomic) NSString *budget;
-@property MGCurrencyType currencyType;
+@property (assign, nonatomic) MGCurrencyType currencyType;
 
 
 - (RACSignal *)checkFormSignal;
