@@ -34,7 +34,7 @@ describe(@"MGCategoryViewModel", ^{
         it(@"should return signal that value is YES", ^{
             viewModel.name = @"test name";
             viewModel.colorHex = @"ffffff";
-            viewModel.budget = 100;
+            viewModel.budget = @"100";
             
             [[viewModel checkFormSignal] subscribeNext:^(id x) {
                 result = [x boolValue];
@@ -51,7 +51,7 @@ describe(@"MGCategoryViewModel", ^{
         it(@"should return signal that value is NO", ^{
             viewModel.name = @"";
             viewModel.colorHex = @"ffffff";
-            viewModel.budget = 100;
+            viewModel.budget = @"100";
             
             [[viewModel checkFormSignal] subscribeNext:^(id x) {
                 result = [x boolValue];
