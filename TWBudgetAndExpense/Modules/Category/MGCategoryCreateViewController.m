@@ -108,7 +108,7 @@
     
     self.colorItem = ({
         RETableViewItem *item = [RETableViewItem itemWithTitle:@"Colour"];
-        UIColor *categoryColor = self.viewModel.colorHex ? [UIColor colorWithHexString:self.viewModel.colorHex] : [UIColor redColor];
+        UIColor *categoryColor = [UIColor colorWithHexString:self.viewModel.colorHex];
         
         [item setImage:[UIImage imageWithColor:categoryColor size:CGSizeMake(30, 30)]];
         [item setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
@@ -123,6 +123,7 @@
             colorSelectionController.delegate = self;
            
             [[self rac_signalForSelector:@selector(colorViewController:didChangeColor:) fromProtocol:@protocol(MSColorSelectionViewControllerDelegate)] subscribeNext:^(RACTuple *tuple) {
+                @strongify(self);
                 MSColorSelectionViewController *vc = tuple.first;
                 [item setImage:[UIImage imageWithColor:vc.color size:CGSizeMake(30, 30)]];
                 self.viewModel.colorHex = [vc.color hexString];

@@ -44,7 +44,7 @@
 
 - (NSString *)colorHex {
     if (!_colorHex) {
-        _colorHex = [UIColor redColor].hexString;
+        _colorHex = [UIColor randomFlatColor].hexString;
     }
     return _colorHex;
 }
