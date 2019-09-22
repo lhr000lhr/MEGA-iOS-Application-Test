@@ -42,6 +42,7 @@
         if (rateModel.success) {
             [RLMRealm.defaultRealm beginWriteTransaction];
             self.rate = [rateModel.quotes doubleValueForKey:@"USDNZD" default:1];
+            self.updateDate = [NSDate dateWithTimeIntervalSince1970:rateModel.timestamp];
             [RLMRealm.defaultRealm commitWriteTransaction];
             NSLog(@"current rate is %lf",self.rate);
         }

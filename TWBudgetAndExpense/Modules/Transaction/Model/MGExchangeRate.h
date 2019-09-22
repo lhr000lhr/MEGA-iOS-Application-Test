@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MGExchangeRate : RLMObject
 
 @property double rate;
+@property NSDate *updateDate;
 
 + (instancetype)sharedExchangeRate;
 
